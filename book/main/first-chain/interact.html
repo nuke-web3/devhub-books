@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Start a Node and Interact - devhub-tracks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A Substrate Track Model for the Devhub">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../OUTLINE.html">OUTLINE</a></li><li class="chapter-item expanded "><a href="../../overview/devhub-overview.html"><strong aria-hidden="true">1.</strong> Devhub Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../overview/before-starting.html"><strong aria-hidden="true">1.1.</strong> Before Starting</a></li><li class="chapter-item expanded "><a href="../../overview/rust-companion.html"><strong aria-hidden="true">1.2.</strong> Rust Companion</a></li><li class="chapter-item expanded "><a href="../../overview/architecture.html"><strong aria-hidden="true">1.3.</strong> Substrate Architecture</a></li></ol></li><li class="chapter-item expanded "><a href="../../main/main-overview.html"><strong aria-hidden="true">2.</strong> Main Track: Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../main/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="../../main/first-chain/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="../../main/first-chain/interact.html" class="active"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-tracks</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="start-and-interact-with-your-node"><a class="header" href="#start-and-interact-with-your-node">Start and Interact with Your Node</a></h1>
+<p>Now that your node has finished compiling, let's show you how everything works out of the box.</p>
+<h2 id="starting-your-node"><a class="header" href="#starting-your-node">Starting Your Node</a></h2>
+<p>Run the following command to start your node:</p>
+<pre><code class="language-bash"># Run a temporary node in development mode
+./target/release/node-template --dev --tmp
+</code></pre>
+<p>Note the flags:</p>
+<ul>
+<li><code>--dev</code> this sets up a developer node <a href="../../knowledgebase/integrate/chain-spec">chain specification</a></li>
+<li><code>--tmp</code> this saves all active data for the node (keys, blockchain database, networking info, ...)
+and is deleted as soon as you properly terminate your node (using <kbd>ctrl</kbd>+<kbd>c</kbd>). So every time you start with this command, you will have a clean state to work from. If the node is killed, <code>/tmp</code> is cleaned automatically on the restart of your
+computer for linux based OSs, and these files can manually be removed if needed.</li>
+</ul>
+<p>With this command, you should see something like this if your node is running successfully:</p>
+<pre><code class="language-bash">2021-03-16 10:56:51  Running in --dev mode, RPC CORS has been disabled.
+2021-03-16 10:56:51  Substrate Node
+2021-03-16 10:56:51  ✌️  version 3.0.0-8370ddd-x86_64-linux-gnu
+2021-03-16 10:56:51  ❤️  by Substrate DevHub &lt;https://github.com/substrate-developer-hub&gt;, 2017-2021
+2021-03-16 10:56:51  📋 Chain specification: Development
+2021-03-16 10:56:51  🏷 Node name: few-size-5380
+2021-03-16 10:56:51  👤 Role: AUTHORITY
+2021-03-16 10:56:51  💾 Database: RocksDb at /tmp/substrateP1jD7H/chains/dev/db
+2021-03-16 10:56:51  ⛓  Native runtime: node-template-100 (node-template-1.tx1.au1)
+2021-03-16 10:56:51  🔨 Initializing Genesis block/state (state: 0x17df…04a0, header-hash: 0xc43b…ed16)
+2021-03-16 10:56:51  👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2021-03-16 10:56:51  ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
+2021-03-16 10:56:51  Using default protocol ID &quot;sup&quot; because none is configured in the chain specs
+2021-03-16 10:56:51  🏷 Local node identity is: 12D3KooWQdU84EJCqDr4aqfhb7dxXU2fzd6i2Rn1XdNtsiM5jvEC
+2021-03-16 10:56:51  📦 Highest known block at #0
+2021-03-16 10:56:51  〽️ Prometheus server started at 127.0.0.1:9615
+2021-03-16 10:56:51  Listening for new connections on 127.0.0.1:9944.
+2021-03-16 10:56:54  🙌 Starting consensus session on top of parent 0xc43b4514877d7dcfff2459cdfe609a96cf8e9b9723589635d7215de6bf00ed16
+2021-03-16 10:56:54  🎁 Prepared block for proposing at 1 [hash: 0x255bcf44df92dd4ccaca15d92d4a3db9d276e42843e21ab0cc840e207b2649d6; parent_hash: 0xc43b…ed16; extrinsics (1): [0x02bf…2cbd]]
+2021-03-16 10:56:54  🔖 Pre-sealed block for proposal at 1. Hash now 0x9c14d9caccc37f8142fc348d184fb4bd8a8bc217a8979493d7f46d4220775616, previously 0x255bcf44df92dd4ccaca15d92d4a3db9d276e42843e21ab0cc840e207b2649d6.
+2021-03-16 10:56:54  ✨ Imported #1 (0x9c14…5616)
+2021-03-16 10:56:54  🙌 Starting consensus session on top of parent 0x9c14d9caccc37f8142fc348d184fb4bd8a8bc217a8979493d7f46d4220775616
+2021-03-16 10:56:54  🎁 Prepared block for proposing at 2 [hash: 0x6cd4bd9d2a531750c10610bdaa5af0075745b6612ffa3623c14d699250b4e732; parent_hash: 0x9c14…5616; extrinsics (1): [0x3cc8…b8d9]]
+2021-03-16 10:56:54  🔖 Pre-sealed block for proposal at 2. Hash now 0x05bd3317b51d717163dfa8847369d7f697c6180868c29f02d0b7ff79c5bbde3f, previously 0x6cd4bd9d2a531750c10610bdaa5af0075745b6612ffa3623c14d699250b4e732.
+2021-03-16 10:56:54  ✨ Imported #2 (0x05bd…de3f)
+2021-03-16 10:56:56  💤 Idle (0 peers), best: #2 (0x05bd…de3f), finalized #0 (0xc43b…ed16), ⬇ 0 ⬆ 0
+2021-03-16 10:57:00  🙌 Starting consensus session on top of parent 0x05bd3317b51d717163dfa8847369d7f697c6180868c29f02d0b7ff79c5bbde3f
+2021-03-16 10:57:00  🎁 Prepared block for proposing at 3 [hash: 0xa6990964cf4f184edc08acd61c3c01ac8975abbba6d42f4eec3f9658097aec04; parent_hash: 0x05bd…de3f; extrinsics (1): [0xd6ed…86a5]]
+2021-03-16 10:57:00  🔖 Pre-sealed block for proposal at 3. Hash now 0xbe07e322ca525e580a3703637db191c6df091b0242a411b88fa0c43ef0ac31f8, previously 0xa6990964cf4f184edc08acd61c3c01ac8975abbba6d42f4eec3f9658097aec04.
+2021-03-16 10:57:00  ✨ Imported #3 (0xbe07…31f8)
+2021-03-16 10:57:01  💤 Idle (0 peers), best: #3 (0xbe07…31f8), finalized #1 (0x9c14…5616), ⬇ 0 ⬆ 0
+</code></pre>
+<p>If the number after <code>finalized:</code> is increasing, your blockchain is producing new blocks and reaching
+consensus about the state they describe!</p>
+<p>A few notes on the example output above:</p>
+<ul>
+<li><code>💾 Database: RocksDb at /tmp/substrateP1jD7H/chains/dev/db</code> : where chain data is being written</li>
+<li><code>🏷 Local node identity is: 12D3KooWQdU84EJCqDr4aqfhb7dxXU2fzd6i2Rn1XdNtsiM5jvEC</code>: the node ID
+needed if you intend to connect to other nodes directly (more in the
+<a href="../start-a-private-network/index">private network tutorial</a>)</li>
+</ul>
+<blockquote>
+<p>While not critical now, please do read all the startup logs for your node, as they help inform you
+of key configuration information as you continue to learn and move past these first basic tutorials.</p>
+</blockquote>
+<h2 id="start-the-front-end-template"><a class="header" href="#start-the-front-end-template">Start the Front-End Template</a></h2>
+<p>To interact with your local node, we will use
+<a href="https://github.com/substrate-developer-hub/substrate-front-end-template">the Substrate Developer Hub Front-End Template</a>,
+which is a collection of UI components that have been designed with common use cases in mind.</p>
+<blockquote>
+<p>Be sure to use the correct version of the template for the version of substrate you are using
+as <a href="https://semver.org/">major versions</a> are <em>not</em> expected to be interoperable!</p>
+</blockquote>
+<p>You already installed the Front-End Template; let's launch it by executing the following command
+in the root directory of the Front-End Template:</p>
+<pre><code class="language-bash"># Make sure to run this command in the root directory of the Front-End Template
+yarn start
+</code></pre>
+<h2 id="interact"><a class="header" href="#interact">Interact</a></h2>
+<p>Once the Front-End Template is running and loaded in your browser at
+<a href="http://localhost:8000/">http://localhost:8000/</a>, take a moment to explore its components. At the
+top, you will find lots of helpful information about the chain to which you're connected as well as
+an account selector that will let you control the account you use to perform on-chain operations.</p>
+<p><img src="assets/tutorials/first-chain/chain-data.png" alt="Chain Data &amp; Account Selector" /></p>
+<p>There is also a table that lists
+<a href="../../knowledgebase/integrate/subkey#well-known-keys">the well-known test accounts</a> that you have
+access to. Some, like Alice and Bob, already have funds!</p>
+<p><img src="assets/tutorials/first-chain/accts-prefunded.png" alt="Account Table" /></p>
+<p>Beneath the account table there is a Transfer component that you can use to transfer funds from one
+account to another. Take note of the info box that describes the precision used by the Front-End
+Template; you should transfer at least <code>1000000000000</code> to make it easy for you to observe the
+changes you're making. Here we give the <code>dave</code> development account these funds:</p>
+<p><img src="assets/tutorials/first-chain/apps-transfer.png" alt="Balance Transfer" /></p>
+<p>Notice that the table of accounts is dynamic and that the account balances are updated as soon as
+the transfer is processed.</p>
+<h3 id="runtime-metadata"><a class="header" href="#runtime-metadata">Runtime Metadata</a></h3>
+<p>The Front-End Template exposes many helpful features and you should explore all of them while you're
+connected to a local development node. One good way to get started is by clicking the &quot;Show
+Metadata&quot; button at the top of the template page and reviewing
+<a href="../../knowledgebase/runtime/metadata">the metadata that your runtime exposes</a>.</p>
+<p><img src="assets/tutorials/first-chain/metadata.png" alt="Metadata JSON" /></p>
+<h3 id="pallet-interactor--events"><a class="header" href="#pallet-interactor--events">Pallet Interactor &amp; Events</a></h3>
+<p>You can use the runtime metadata to discover a runtime's capabilities. The Front-End Template
+provides a helpful Pallet Interactor component that provides several mechanisms for interacting with
+a Substrate runtime.</p>
+<p><img src="assets/tutorials/first-chain/interactor-events.png" alt="Pallet Interactor &amp; Events" /></p>
+<p><a href="../../knowledgebase/learn-substrate/extrinsics">Extrinsics</a> are the runtime's callable functions;
+if you are already familiar with blockchain concepts, you can think of them as transactions for now.
+The Pallet Interactor allows you to submit
+<a href="../../knowledgebase/learn-substrate/extrinsics#unsigned-transactions">unsigned</a> or
+<a href="../../knowledgebase/learn-substrate/extrinsics#signed-transactions">signed</a> extrinsics and also
+provides a button that makes it easy to invoke an extrinsic by way of
+<a href="https://substrate.dev/rustdocs/v3.0.0/pallet_sudo/enum.Call.html#variant.sudo">the <code>sudo</code> function from the Sudo pallet</a>.
+You can learn more about using the &quot;SUDO&quot; button to invoke privileged extrinsics in the <a href="../add-a-pallet">Add a Pallet</a> tutorial.</p>
+<p>You can select Query interactions to read
+<a href="../../knowledgebase/runtime/storage">the values present in your runtime's storage</a>. The RPC and
+Constant options provide additional mechanisms for runtime interaction.</p>
+<p>Like many blockchains, Substrate chains use <a href="../../knowledgebase/runtime/events">events</a> to report
+the results of asynchronous operations. If you have already used the Front-End Template to perform a
+balance transfer as described above, you should see an event for the transfer in the Event component
+next to the Pallet Interactor.</p>
+<h2 id="next-steps"><a class="header" href="#next-steps">Next Steps</a></h2>
+<p>🎉 Congratulations!!! 🎉</p>
+<p>You have launched a working Substrate-based blockchain, attached a user interface to that chain, and
+made token transfers among users. We hope you'll continue learning about Substrate!</p>
+<p>Your next step may be:</p>
+<ul>
+<li>Extend the features of the template node in the <a href="../add-a-pallet">Add a Pallet</a> tutorial.</li>
+<li>Learn about forkless runtime upgrades in the <a href="../forkless-upgrade">Forkless Upgrade a Chain</a> tutorial.</li>
+</ul>
+<p>If you experienced any issues with this tutorial or want to provide feedback, You can
+<a href="https://stackoverflow.com/questions/tagged/substrate">ask a question on Stack Overflow</a> and use the
+<code>substrate</code> tag or contact us on
+<a href="https://matrix.to/#/#substrate-technical:matrix.org">Element</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../main/first-chain/install.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../main/first-chain/install.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

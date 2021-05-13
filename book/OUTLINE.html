@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OUTLINE - devhub-tracks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A Substrate Track Model for the Devhub">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="OUTLINE.html" class="active">OUTLINE</a></li><li class="chapter-item expanded "><a href="overview/devhub-overview.html"><strong aria-hidden="true">1.</strong> Devhub Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="overview/before-starting.html"><strong aria-hidden="true">1.1.</strong> Before Starting</a></li><li class="chapter-item expanded "><a href="overview/rust-companion.html"><strong aria-hidden="true">1.2.</strong> Rust Companion</a></li><li class="chapter-item expanded "><a href="overview/architecture.html"><strong aria-hidden="true">1.3.</strong> Substrate Architecture</a></li></ol></li><li class="chapter-item expanded "><a href="main/main-overview.html"><strong aria-hidden="true">2.</strong> Main Track: Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="main/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="main/first-chain/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="main/first-chain/interact.html"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-tracks</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="substrate-overview-for-everyone-not-just-devs"><a class="header" href="#substrate-overview-for-everyone-not-just-devs">Substrate Overview (for everyone, not just devs)</a></h1>
+<p>start with why -&gt; how -&gt; what inspiration &amp; guide: <a href="https://www.freshworks.com/crm/sales/summary-of-start-with-why-blog/">https://www.freshworks.com/crm/sales/summary-of-start-with-why-blog/</a>- <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4">https://www.youtube.com/watch?v=qp0HIF3SfI4</a></p>
+<p>Those sold on developing with substrate are prompted to enter here Substrate Starter Track: The place everyone developing should start with. 
+Invite people to skip  ahead, but only at their own risk, as this track is fundamental to  understanding the key features of substrate!</p>
+<h2 id="before-you-begin"><a class="header" href="#before-you-begin">Before you begin</a></h2>
+<p>Read only</p>
+<h3 id="rust-starter-kit-book-companion"><a class="header" href="#rust-starter-kit-book-companion">Rust “starter kit” book companion</a></h3>
+<p>Read only, do with combination of rustbook</p>
+<h3 id="overview-of-devhub"><a class="header" href="#overview-of-devhub">Overview of Devhub</a></h3>
+<p>Read only</p>
+<h3 id="why-devhub"><a class="header" href="#why-devhub">Why devhub?</a></h3>
+<p>Read only</p>
+<h3 id="what-is-substrate"><a class="header" href="#what-is-substrate">What is substrate?</a></h3>
+<p>Read only</p>
+<h3 id="install"><a class="header" href="#install">Install</a></h3>
+<p>Do</p>
+<h3 id="first-chain"><a class="header" href="#first-chain">First Chain</a></h3>
+<p>Do and learn</p>
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/create-your-first-substrate-chain/">https://substrate.dev/docs/en/tutorials/create-your-first-substrate-chain/</a></li>
+<li>{remove background, already in architecture}</li>
+<li>{add overview of ways to build substrate and say we will focus on FRAME}
+<ul>
+<li><a href="https://substrate.dev/docs/en/">https://substrate.dev/docs/en/</a></li>
+</ul>
+</li>
+<li>{remove “learn more”, keep on track}</li>
+</ul>
+<h3 id="frame-overview"><a class="header" href="#frame-overview">FRAME Overview</a></h3>
+<p>Read Only</p>
+<ul>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/runtime/">https://substrate.dev/docs/en/knowledgebase/runtime/</a></li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/runtime/frame">https://substrate.dev/docs/en/knowledgebase/runtime/frame</a>
+<ul>
+<li>combine above two into one?</li>
+</ul>
+</li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/runtime/pallets">https://substrate.dev/docs/en/knowledgebase/runtime/pallets</a></li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/learn-substrate/extrinsics">https://substrate.dev/docs/en/knowledgebase/learn-substrate/extrinsics</a></li>
+</ul>
+<h3 id="add-a-frame-pallet"><a class="header" href="#add-a-frame-pallet">Add a FRAME Pallet</a></h3>
+<p>Do and learn</p>
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/add-a-pallet/">https://substrate.dev/docs/en/tutorials/add-a-pallet/</a>
+<ul>
+<li>Kitties: Add Identity pallet instead of Nicks? Or swap latter on?</li>
+</ul>
+</li>
+<li>{remove “learn more”, keep on track}</li>
+<li>point to the libraries of pallets and encourage going README deep into a few
+that catch your eye in substrate and ORML and more… Then come back here
+to continue</li>
+</ul>
+<h3 id="interact-with-your-custom-node"><a class="header" href="#interact-with-your-custom-node">Interact With Your Custom Node</a></h3>
+<ul>
+<li>{extend / move custom UI element from last add a pallet here}</li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/integrate/polkadot-js">https://substrate.dev/docs/en/knowledgebase/integrate/polkadot-js</a></li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/integrate/libraries">https://substrate.dev/docs/en/knowledgebase/integrate/libraries</a>
+<ul>
+<li>Combine? Note that the JS libs are most supported.</li>
+<li>bring in key examples from polkadot.js docs, or reference to them
+<ul>
+<li>metadata being most important - need a page for this… but MAYBE not needed soon (WIP PR on substrate for transparent metadata)</li>
+<li>This can be in a separate “branch” track for substrate client development/use</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pallet-engineering-overview"><a class="header" href="#pallet-engineering-overview">Pallet Engineering Overview</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/runtime/">https://substrate.dev/docs/en/knowledgebase/runtime/</a>
+<ul>
+<li>Presently used as a reference set of pages, not meant to be read linearly more than this one time , crosslinked throughout.</li>
+<li>Vision: cater content to the runtime “branch” of content that most will follow after this main “trunk” of content in a linear flow. Put all &quot;odd balls&quot; in reference pages, and plan to insert into latter tracks</li>
+</ul>
+</li>
+<li>Revisit Rust fundamentals in substrate context based on substrate kitties slides: <a href="https://docs.google.com/presentation/d/1dhaoLb5V2K_vDe4EJlUcKwePD1nMktr57fOdSo8bHns/edit#slide=id.g51f30cead3_0_14">https://docs.google.com/presentation/d/1dhaoLb5V2K_vDe4EJlUcKwePD1nMktr57fOdSo8bHns/edit#slide=id.g51f30cead3_0_14</a>
+<ul>
+<li>Include specific rust syntax examples and explanations that you need in rust along the way</li>
+<li>Point to the <a href="https://github.com/paritytech/substrate/tree/master/frame/example">substrate example pallet</a> for the comments with in depth explanations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="create-your-first-dapp"><a class="header" href="#create-your-first-dapp">Create Your First dApp</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/create-a-pallet/">https://substrate.dev/docs/en/tutorials/create-a-pallet/</a>
+<ul>
+<li>Use the <a href="https://github.com/paritytech/substrate/tree/master/frame/example">substrate example pallet</a> as a base? Instead of the template pallet. But use a <em>specific</em> commit to avoid any upgrades &quot;breaking&quot; the tutorial. Alternatively use the template pallet, and add more comments to match the example pallet.</li>
+<li>End result is a minimal NFT pallet</li>
+</ul>
+</li>
+<li><a href="https://substrate.dev/docs/en/tutorials/build-a-dapp/pallet">https://substrate.dev/docs/en/tutorials/build-a-dapp/pallet</a>
+<ul>
+<li>Reworked to build the NFT UI</li>
+</ul>
+</li>
+</ul>
+<h3 id="start-a-network"><a class="header" href="#start-a-network">Start a Network</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/start-a-private-network/">https://substrate.dev/docs/en/tutorials/start-a-private-network/</a></li>
+<li>launch FAQ for testing -&gt; prod</li>
+</ul>
+<hr />
+<h2 id=""><a class="header" href="#"></a></h2>
+<h2 id="devhub-track-structure"><a class="header" href="#devhub-track-structure">Devhub Track Structure:</a></h2>
+<h3 id="-1"><a class="header" href="#-1"></a></h3>
+<h3 id="runtime-engineer-main-trunk-for-more-branches"><a class="header" href="#runtime-engineer-main-trunk-for-more-branches">Runtime Engineer (main trunk for more branches)</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/runtime/">https://substrate.dev/docs/en/knowledgebase/runtime/</a> Mostly keep this, but address the flow and remove redundancy with main trunk (assume they did this, reference it)</li>
+<li><a href="https://substrate.dev/docs/en/tutorials/visualize-node-metrics/">https://substrate.dev/docs/en/tutorials/visualize-node-metrics/</a></li>
+</ul>
+<h3 id="-2"><a class="header" href="#-2"></a></h3>
+<h3 id="pallet-design--interaction-201"><a class="header" href="#pallet-design--interaction-201">Pallet Design &amp; Interaction (201)</a></h3>
+<ul>
+<li>DO: <a href="https://substrate.dev/docs/en/tutorials/create-a-pallet/">https://substrate.dev/docs/en/tutorials/create-a-pallet/</a></li>
+<li>Storage <a href="https://substrate.dev/docs/en/knowledgebase/advanced/storage">https://substrate.dev/docs/en/knowledgebase/advanced/storage</a></li>
+<li>SCALE <a href="https://substrate.dev/docs/en/knowledgebase/advanced/codec">https://substrate.dev/docs/en/knowledgebase/advanced/codec</a></li>
+<li>DO: <a href="https://substrate.dev/docs/en/tutorials/create-a-pallet/">https://substrate.dev/docs/en/tutorials/create-a-pallet/</a></li>
+<li>RPC / API interface</li>
+<li>Community resources (ORML, etc.)</li>
+<li>Reference “leaves” : specializations on types like gov, tokens, … all for the solo-chain context )in the form of “how-to guides”</li>
+<li>DO: <a href="https://substrate.dev/recipes/pallet-coupling.html">https://substrate.dev/recipes/pallet-coupling.html</a></li>
+<li>explore: <a href="https://github.com/substrate-developer-hub/awesome-substrate">https://github.com/substrate-developer-hub/awesome-substrate</a></li>
+</ul>
+<h3 id="-3"><a class="header" href="#-3"></a></h3>
+<h3 id="runtime-upgrades--storage-migrations"><a class="header" href="#runtime-upgrades--storage-migrations">Runtime Upgrades &amp; Storage Migrations</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/forkless-upgrade/">https://substrate.dev/docs/en/tutorials/forkless-upgrade/</a></li>
+<li>{upcoming content on migrations here}
+<ul>
+<li><a href="https://github.com/substrate-developer-hub/migration-example">https://github.com/substrate-developer-hub/migration-example</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="-4"><a class="header" href="#-4"></a></h3>
+<h3 id="advanced-topics"><a class="header" href="#advanced-topics">Advanced Topics</a></h3>
+<ul>
+<li>Extend &amp; Go Beyond FRAME
+<ul>
+<li>Use this as basis <a href="https://substrate.dev/docs/en/#usage">https://substrate.dev/docs/en/#usage</a></li>
+<li>Executor interface <a href="https://substrate.dev/docs/en/knowledgebase/advanced/executor">https://substrate.dev/docs/en/knowledgebase/advanced/executor</a></li>
+</ul>
+</li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/advanced/">https://substrate.dev/docs/en/knowledgebase/advanced/</a> most of these not already incorporated</li>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/advanced/ss58-address-format">https://substrate.dev/docs/en/knowledgebase/advanced/ss58-address-format</a></li>
+</ul>
+<h3 id="-5"><a class="header" href="#-5"></a></h3>
+<h3 id="parachain-engineer"><a class="header" href="#parachain-engineer">Parachain Engineer</a></h3>
+<pre><code>(RE branch not strictly required, but encouraged)
+
+</code></pre>
+<h3 id="-6"><a class="header" href="#-6"></a></h3>
+<h3 id="solo-chain-vs-parachain"><a class="header" href="#solo-chain-vs-parachain">Solo-chain vs. Parachain</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/advanced/consensus">https://substrate.dev/docs/en/knowledgebase/advanced/consensus</a></li>
+<li>(Kian’s office hour for SBP here)</li>
+<li></li>
+</ul>
+<h3 id="-7"><a class="header" href="#-7"></a></h3>
+<h3 id="cumulus"><a class="header" href="#cumulus">Cumulus</a></h3>
+<ul>
+<li>read and/or port into devhub: <a href="https://polkadot.network/the-path-of-a-parachain-block/">https://polkadot.network/the-path-of-a-parachain-block/</a></li>
+<li>DO: <a href="https://substrate.dev/cumulus-workshop/">https://substrate.dev/cumulus-workshop/</a></li>
+<li></li>
+<li>runtime upgrades of relay chain &amp; parachains</li>
+</ul>
+<h3 id="-8"><a class="header" href="#-8"></a></h3>
+<h3 id="xcm-xcmp-hmp-vmp-"><a class="header" href="#xcm-xcmp-hmp-vmp-">XCM, XCMP, HMP VMP, …</a></h3>
+<h3 id="-9"><a class="header" href="#-9"></a></h3>
+<h3 id="para-light-clients"><a class="header" href="#para-light-clients">Para-light clients</a></h3>
+<pre><code>Full nodes for validator &amp; collator needed now, but not forever
+
+</code></pre>
+<h3 id="-10"><a class="header" href="#-10"></a></h3>
+<h3 id="smart-contracts"><a class="header" href="#smart-contracts">Smart Contracts</a></h3>
+<pre><code>(RE branch not strictly required, but encouraged)
+Point out that pallets can and should be the go-to for any *standard* contact patterns. See Statemint for an analog: it's a &quot;token factory&quot; for ERC20 like tokens.
+
+</code></pre>
+<h3 id="-11"><a class="header" href="#-11"></a></h3>
+<h3 id="frontier-evm"><a class="header" href="#frontier-evm">Frontier, EVM</a></h3>
+<ul>
+<li><a href="https://substrate.dev/frontier-workshop/#/">https://substrate.dev/frontier-workshop/#/</a></li>
+</ul>
+<h3 id="-12"><a class="header" href="#-12"></a></h3>
+<h3 id="contacts-pallet-ink"><a class="header" href="#contacts-pallet-ink">Contacts pallet, ink!</a></h3>
+<ul>
+<li><a href="https://substrate.dev/docs/en/knowledgebase/smart-contracts/overview">https://substrate.dev/docs/en/knowledgebase/smart-contracts/overview</a> basically same flow as this section of devhub</li>
+<li><a href="https://substrate.dev/substrate-contracts-workshop/#/">https://substrate.dev/substrate-contracts-workshop/#/</a></li>
+<li><a href="https://substrate.dev/docs/en/tutorials/add-contracts-pallet/">https://substrate.dev/docs/en/tutorials/add-contracts-pallet/</a></li>
+</ul>
+<h3 id="-13"><a class="header" href="#-13"></a></h3>
+<h3 id="offchain-workers"><a class="header" href="#offchain-workers">Offchain Workers</a></h3>
+<h3 id="-14"><a class="header" href="#-14"></a></h3>
+<h3 id="oracles"><a class="header" href="#oracles">Oracles</a></h3>
+<h3 id="-15"><a class="header" href="#-15"></a></h3>
+<h3 id="heavy-operations"><a class="header" href="#heavy-operations">Heavy Operations</a></h3>
+<pre><code>Using only one node for processing possible
+
+</code></pre>
+<h3 id="-16"><a class="header" href="#-16"></a></h3>
+<h3 id="solo-chains"><a class="header" href="#solo-chains">Solo-chains</a></h3>
+<ul>
+<li>Private, permissioned, hybrid
+<ul>
+<li><a href="https://substrate.dev/docs/en/tutorials/build-permission-network/">https://substrate.dev/docs/en/tutorials/build-permission-network/</a></li>
+<li><a href="https://github.com/substrate-developer-hub/substrate-enterprise-sample">https://github.com/substrate-developer-hub/substrate-enterprise-sample</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="-17"><a class="header" href="#-17"></a></h3>
+<h3 id="node-clients"><a class="header" href="#node-clients">Node Clients</a></h3>
+<pre><code>communicating with substrate-based nodes
+
+</code></pre>
+<ul>
+<li>most of the <a href="https://substrate.dev/docs/en/knowledgebase/integrate/">https://substrate.dev/docs/en/knowledgebase/integrate/</a> section can be ported here.</li>
+<li>also in RE track, but good to have here in the flow: <a href="https://substrate.dev/docs/en/tutorials/visualize-node-metrics/">https://substrate.dev/docs/en/tutorials/visualize-node-metrics/</a></li>
+<li>how-to guides on runtime upgrades and storage migrations. (metadata)</li>
+<li>explore: <a href="https://github.com/substrate-developer-hub/awesome-substrate">https://github.com/substrate-developer-hub/awesome-substrate</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="overview/devhub-overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a rel="next" href="overview/devhub-overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

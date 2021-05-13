@@ -1,0 +1,43 @@
+# Rust Book Companion
+
+A companion text to have while learning rust from scratch, using the the rust book. This gives key chapters to understand and the connect for use in substrate that will become apparent as you progress into substrate development. 
+
+- Chapters 1-5 are fundamental, but not critical to really digest. Most developers with a C/C++ or Java experience will find syntax and concepts familiar
+- [https://doc.rust-lang.org/book/ch05-00-structs.html](https://doc.rust-lang.org/book/ch05-00-structs.html)
+    - req for data structure understanding and how functions input/return data is given in most substrate functions
+    - introduction to derive macros
+    - intro to impl methods for struts - core to all substrate is
+        - &self for methods
+        - associated fn w/o &self ref
+- [https://doc.rust-lang.org/book/ch06-00-enums.html](https://doc.rust-lang.org/book/ch06-00-enums.html)
+    - enums used in errors and returns
+    - Option enum intro
+    - Why None is better than Null
+    - (match not required)
+- [https://doc.rust-lang.org/book/ch09-00-error-handling.html](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+    - Errors core to substrate logic - they are expected. They should not panic!!!
+    - All Calls should return Return types with Error types that emit events (logic created with FRAME macros)
+    - intro to `?` operator
+    - 
+- [https://doc.rust-lang.org/book/ch10-00-generics.html](https://doc.rust-lang.org/book/ch10-00-generics.html)
+    - /the MOST important chapter for substrate development.
+    - Generic Types, Traits, make substrate the modular framework it is!
+    - Generic `T` used for `Config` all over, know you know why
+    - setting a concrete type for a defined generic is how we implement much of pallet functionality
+    - Implementing a Trait on a Type is how much of the logic under the hood of substrate works
+    - Traits as Parameters is how we enforce that stucts implement the required parts of a trait to be used in the framework
+    - Trait Bound Syntax is commonly used to be more explicit, used more commonly than Traits as Parameters syntax
+    - Using Trait Bounds to Conditionally Implement Methods: what the frame macros are doing under the hood
+    - (lifetimes not req.)
+- [https://doc.rust-lang.org/book/ch12-00-an-io-project.html](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+    - Do this at least to show mastery of core rust concepts that will greatly help you understand how to develop substrate.
+- [https://doc.rust-lang.org/book/ch19-06-macros.html](https://doc.rust-lang.org/book/ch19-06-macros.html)
+    - Core of the framework. you don’t need to write them, you do need to know what they are doing
+    - cargo expand to see the work they do for you
+    - 
+- NOTE: std is NOT available for runtimes.
+    - means…
+    - 
+- Runtime logic minimalism:
+    - SCALE encoding
+        - NO strings (as you know them) use minimal primitive rep.

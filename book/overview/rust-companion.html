@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust Companion - devhub-tracks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A Substrate Track Model for the Devhub">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../OUTLINE.html">OUTLINE</a></li><li class="chapter-item expanded "><a href="../overview/devhub-overview.html"><strong aria-hidden="true">1.</strong> Devhub Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../overview/before-starting.html"><strong aria-hidden="true">1.1.</strong> Before Starting</a></li><li class="chapter-item expanded "><a href="../overview/rust-companion.html" class="active"><strong aria-hidden="true">1.2.</strong> Rust Companion</a></li><li class="chapter-item expanded "><a href="../overview/architecture.html"><strong aria-hidden="true">1.3.</strong> Substrate Architecture</a></li></ol></li><li class="chapter-item expanded "><a href="../main/main-overview.html"><strong aria-hidden="true">2.</strong> Main Track: Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="../main/first-chain/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="../main/first-chain/interact.html"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-tracks</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="rust-book-companion"><a class="header" href="#rust-book-companion">Rust Book Companion</a></h1>
+<p>A companion text to have while learning rust from scratch, using the the rust book. This gives key chapters to understand and the connect for use in substrate that will become apparent as you progress into substrate development. </p>
+<ul>
+<li>Chapters 1-5 are fundamental, but not critical to really digest. Most developers with a C/C++ or Java experience will find syntax and concepts familiar</li>
+<li><a href="https://doc.rust-lang.org/book/ch05-00-structs.html">https://doc.rust-lang.org/book/ch05-00-structs.html</a>
+<ul>
+<li>req for data structure understanding and how functions input/return data is given in most substrate functions</li>
+<li>introduction to derive macros</li>
+<li>intro to impl methods for struts - core to all substrate is
+<ul>
+<li>&amp;self for methods</li>
+<li>associated fn w/o &amp;self ref</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://doc.rust-lang.org/book/ch06-00-enums.html">https://doc.rust-lang.org/book/ch06-00-enums.html</a>
+<ul>
+<li>enums used in errors and returns</li>
+<li>Option enum intro</li>
+<li>Why None is better than Null</li>
+<li>(match not required)</li>
+</ul>
+</li>
+<li><a href="https://doc.rust-lang.org/book/ch09-00-error-handling.html">https://doc.rust-lang.org/book/ch09-00-error-handling.html</a>
+<ul>
+<li>Errors core to substrate logic - they are expected. They should not panic!!!</li>
+<li>All Calls should return Return types with Error types that emit events (logic created with FRAME macros)</li>
+<li>intro to <code>?</code> operator</li>
+<li></li>
+</ul>
+</li>
+<li><a href="https://doc.rust-lang.org/book/ch10-00-generics.html">https://doc.rust-lang.org/book/ch10-00-generics.html</a>
+<ul>
+<li>/the MOST important chapter for substrate development.</li>
+<li>Generic Types, Traits, make substrate the modular framework it is!</li>
+<li>Generic <code>T</code> used for <code>Config</code> all over, know you know why</li>
+<li>setting a concrete type for a defined generic is how we implement much of pallet functionality</li>
+<li>Implementing a Trait on a Type is how much of the logic under the hood of substrate works</li>
+<li>Traits as Parameters is how we enforce that stucts implement the required parts of a trait to be used in the framework</li>
+<li>Trait Bound Syntax is commonly used to be more explicit, used more commonly than Traits as Parameters syntax</li>
+<li>Using Trait Bounds to Conditionally Implement Methods: what the frame macros are doing under the hood</li>
+<li>(lifetimes not req.)</li>
+</ul>
+</li>
+<li><a href="https://doc.rust-lang.org/book/ch12-00-an-io-project.html">https://doc.rust-lang.org/book/ch12-00-an-io-project.html</a>
+<ul>
+<li>Do this at least to show mastery of core rust concepts that will greatly help you understand how to develop substrate.</li>
+</ul>
+</li>
+<li><a href="https://doc.rust-lang.org/book/ch19-06-macros.html">https://doc.rust-lang.org/book/ch19-06-macros.html</a>
+<ul>
+<li>Core of the framework. you don’t need to write them, you do need to know what they are doing</li>
+<li>cargo expand to see the work they do for you</li>
+<li></li>
+</ul>
+</li>
+<li>NOTE: std is NOT available for runtimes.
+<ul>
+<li>means…</li>
+<li></li>
+</ul>
+</li>
+<li>Runtime logic minimalism:
+<ul>
+<li>SCALE encoding
+<ul>
+<li>NO strings (as you know them) use minimal primitive rep.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../overview/before-starting.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../overview/architecture.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../overview/before-starting.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../overview/architecture.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

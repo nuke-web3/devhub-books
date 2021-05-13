@@ -5,3 +5,6 @@ multilingual = false
 src = "tracks"
 title = "devhub-tracks"
 description = "A Substrate Track Model for the Devhub"
+
+[build]
+build-dir = "docs"

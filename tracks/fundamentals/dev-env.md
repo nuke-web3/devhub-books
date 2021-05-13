@@ -7,7 +7,7 @@ on the computer's operating system. Once Rust is configured, you will use its to
 with Rust projects; the commands for Rust's toolchains will be the same for all supported,
 Unix-based operating systems.
 
-## 1. Build Dependencies 
+## 1. Build Dependencies
 
 Substrate development is easiest on Unix-based operating systems like macOS or Linux. The examples
 in the Substrate [Tutorials](../../../../tutorials) and [Recipes](https://substrate.dev/recipes/)
@@ -74,7 +74,7 @@ brew install openssl
 > use [Windows Subsystem Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL)
 > and follow the instructions for [Ubuntu/Debian](#ubuntudebian).
 
-Please refer to the separate [guide for native Windows development](windows-users).
+Please refer to the separate [guide for native Windows development](./windows-users.md).
 
 ## 2. Rust Developer Environment
 

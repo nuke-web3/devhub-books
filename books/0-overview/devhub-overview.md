@@ -20,7 +20,7 @@ These books are broken down into two primary sections:
 1. Learn
 2. Do
 
-![assets/devhub-books-diagram.png](assets/devhub-books-diagram.png)
+![assets/devhub-books-diagram.png](../assets/devhub-books-diagram.png)
 
 ### 😺 Substrate Kitties 😺
 

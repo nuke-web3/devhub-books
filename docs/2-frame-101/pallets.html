@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pallets - devhub-books</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Substrate Devhub Books">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../OUTLINE.html">(temporary) Structure of Devhub Rework</a></li><li class="chapter-item expanded affix "><a href="../0-overview/devhub-overview.html">Devhub Overview</a></li><li class="chapter-item expanded affix "><a href="../0-overview/before-starting.html">Before Starting</a></li><li class="chapter-item expanded affix "><a href="../0-overview/rust-companion.html">Rust Companion</a></li><li class="chapter-item expanded affix "><li class="part-title">📚 ✔️ Fundamentals</li><li class="chapter-item expanded "><a href="../1-fundamentals/architecture.html"><strong aria-hidden="true">1.</strong> Substrate Architecture</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/index.html"><strong aria-hidden="true">2.</strong> Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1-fundamentals/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/interact.html"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">🏰 FRAME 101</li><li class="chapter-item expanded "><a href="../2-frame-101/index.html"><strong aria-hidden="true">3.</strong> FRAME Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/frame.html"><strong aria-hidden="true">3.1.</strong> Runtime Interface</a></li><li class="chapter-item expanded "><a href="../2-frame-101/pallets.html" class="active"><strong aria-hidden="true">3.2.</strong> Pallets</a></li><li class="chapter-item expanded "><a href="../2-frame-101/extrinsics.html"><strong aria-hidden="true">3.3.</strong> Extrinsics</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/index.html"><strong aria-hidden="true">3.4.</strong> 😺 Add a FRAME Pallet</a></li></ol></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/import-a-pallet.html"><strong aria-hidden="true">4.</strong> 😺 Import the Nicks Pallet</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/configure-a-pallet.html"><strong aria-hidden="true">4.1.</strong> 😺 Configure Nicks</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/use-a-pallet.html"><strong aria-hidden="true">4.2.</strong> 😺 Nicks Interaction</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">👷 Runtime Engineering 101</li><li class="chapter-item expanded "><a href="../3-runtime-101/index.html"><strong aria-hidden="true">5.</strong> Runtime Engineering Overview</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Rust for FRAME</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 😺 Build an NFT Pallet</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> NFT UI</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">🕸 Networking 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Network Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> 😺 Local Network</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 👷 Runtime Engineering 201</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Runtime Upgrades 1</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Storage Migrations</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 😺 Add Identity Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 😺 Migrate Nicks -&gt; Identity</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Pallet Coupling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Benchmarking</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 😺 Benchmark A Custom Pallet</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Beyond FRAME</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🤳 Node Clients 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Polakdot.js</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Subtx</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> </div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🦸 DevOps 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Node Types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">17.1.</strong> Full &amp; Archival</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.2.</strong> Light</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Node Telemetry &amp; Metrics</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Visualization w/ Grafana</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Remote Node Ops</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">19.1.</strong> Peering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.2.</strong> Exposing Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Going to Production FAQ</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 💠 Parachain Engineering 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Solo-chains vs. Parachains</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Collators</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">22.1.</strong> Light vs. Full Para-Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.</strong> Cumulus</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">23.1.</strong> 😺 Cumulus Workshop</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">24.</strong> XCM</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 📜 Smart Contracts</li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.</strong> Frontier</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">25.1.</strong> Ethereum Virtual Machine (EVM)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.2.</strong> Ethereum API</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.</strong> Wasm Contrats</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">26.1.</strong> Contracts Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.2.</strong> ink!</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">27.</strong> 😺 Kitties &amp; Contracts</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🔋 Miscellaneous Topics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.</strong> Solo-chains</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">28.1.</strong> Private, Permissioned Networks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.2.</strong> Hybird Enterprise Chains</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Off-Chain Workers</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">29.1.</strong> Specialist Nodes w/ OCW</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">30.</strong> Specialist Nodes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">31.</strong> Oracles</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">32.</strong> SS58 Addresses</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">33.</strong> Bridgeds</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">33.1.</strong> BEEFY</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">🔍️ Quick Search</li><li class="chapter-item expanded "><a href="../quick-search/glossary.html"><strong aria-hidden="true">34.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="../quick-search/FAQ.html"><strong aria-hidden="true">35.</strong> FAQ</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🙏 Contribute</li><li class="chapter-item expanded "><a href="../contribute/help-translate.html"><strong aria-hidden="true">36.</strong> Help Translate</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-books</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pallets"><a class="header" href="#pallets">Pallets</a></h1>
+<p>The following documentation is written for technical audiences, familiar with the Rust programming
+language. It is a top-level entry point for FRAME runtime developement in Substrate.</p>
+<blockquote>
+<p>If you are just getting started with Substrate runtime development, we suggest you try
+our introductory tutorial for
+<a href="../../tutorials/create-your-first-substrate-chain">creating your first Substrate chain</a>.</p>
+</blockquote>
+<h2 id="what-is-a-pallet"><a class="header" href="#what-is-a-pallet">What is a Pallet?</a></h2>
+<p>Pallets are a special kind of Rust module made up of a set of types, trait implementations and functions
+from which Substrate runtimes can be composed. FRAME not only
+provides a library of commonly used Substrate pallets but also a framework to build custom domain-specific
+pallets, giving runtime engineers the flexibility to define their runtime's behaviour according to their
+target use case. The result: each pallet has its own discrete logic which can modify the features and
+functionality of your blockchain's state transition functions.</p>
+<p>For example, the <a href="https://github.com/paritytech/substrate/tree/master/frame/balances">Balances pallet</a>, which is included in <a href="/knowledgebase/runtime/frame">FRAME</a>, defines cryptocurrency capabilities for your blockchain. More specifically, it
+defines:</p>
+<ul>
+<li><strong>Storage items</strong> that keep track of the tokens a user owns.</li>
+<li><strong>Functions</strong> that users can call to transfer
+and manage those tokens.</li>
+<li><strong>APIs</strong> which allow other pallets to make use of those tokens and their capabilities.</li>
+<li><strong>Hooks</strong>
+which allow other pallets to trigger function calls when a user's balance changes.</li>
+</ul>
+<p>Substrate runtime engineers can define custom logic for their blockchain by writing their own pallets and encapsulating their blockchains desired functionality by combining custom pallets with existing FRAME pallets or Substrate modules alike. The following documentation will show you how.</p>
+<blockquote>
+<p><strong>Note:</strong> At the time of writing, FRAME pallets exist in two different flavors — Version 1 and Version 2. This article first covers the structure of a v1 pallet. Skip to <a href="./pallets#frame-v2">FRAME v2</a> for the latest structure of a Substrate pallet. Read <a href="./macros#frame-v1-vs-v2">here</a> for more information on these changes.</p>
+</blockquote>
+<h2 id="skeleton-of-a-pallet"><a class="header" href="#skeleton-of-a-pallet">Skeleton of a Pallet</a></h2>
+<h3 id="frame-v1"><a class="header" href="#frame-v1">FRAME v1</a></h3>
+<p>A Substrate pallet is composed of 5 sections:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 1. Imports and Dependencies
+// The pallet supports the use of any Rust library which compiles
+// with the `no_std` flag.
+use support::{decl_module, decl_event, decl_storage, ...}
+
+// 2. Runtime Configuration Trait
+// All of the runtime types and consts go in here. If the pallet
+// is dependent on specific other pallets, then their configuration traits
+// should be added to the inherited traits list.
+pub trait Config: frame_system::Config { ... }
+
+// 3. Runtime Events
+// Events are a simple means of reporting specific conditions and circumstances
+// that have happened that users, Dapps and/or chain explorers would find
+// interesting and otherwise difficult to detect.
+decl_event! { ... }
+
+// 4. Runtime Storage
+// This allows for type-safe usage of the Substrate storage database, so you can
+// keep things around between blocks.
+decl_storage! { ... }
+
+// 5. The Pallet Declaration
+// This defines the `Module` struct that is ultimately exported from this pallet.
+// It defines the callable functions that this pallet exposes and orchestrates
+// actions this pallet takes throughout block execution.
+decl_module! { ... }
+<span class="boring">}
+</span></code></pre></pre>
+<blockquote>
+<p><strong>Note</strong>: Additional sections such as <a href="./macros#decl_error"><code>decl_error!</code></a> are commonly used however are not a requirement for a minimally working pallet.</p>
+</blockquote>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<p>The <a href="https://substrate.dev/recipes/basic-token.html">Basic Token recipe</a> provides a good example of a simple FRAME V1 pallet that allows a user to create a <code>u64</code> supply of tokens in storage and a <code>StorageMap</code> of account IDs and <code>u64</code> balances. The primary parts include:</p>
+<ul>
+<li><code>decl_storage!</code> defines <code>TotalSupply</code> and <code>Balances</code> the pallet's storage items;</li>
+<li><code>decl_event!</code> defines <code>Initialized</code> and <code>Transfer</code> events;</li>
+<li><code>decl_module!</code> defines the pallet's functions, <code>init()</code> and <code>transfer()</code>; and</li>
+<li><code>decl_module!</code> also has a <code>deposit_event()</code> function, common to all pallets that define behavior that emits an event.</li>
+</ul>
+<h3 id="frame-v2"><a class="header" href="#frame-v2">FRAME v2</a></h3>
+<p>A FRAME v2 pallet is commonly composed of 7 sections:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 1. Imports and Dependencies
+pub use pallet::*;
+#[frame_support::pallet]
+pub mod pallet {
+	use frame_support::pallet_prelude::*;
+	use frame_system::pallet_prelude::*;
+}
+
+// 2. Declaration of the Pallet type
+// This is a placeholder to implement traits and methods.
+#[pallet::pallet]
+#[pallet::generate_store(pub(super) trait Store)]
+	pub struct Pallet&lt;T&gt;(PhantomData&lt;T&gt;);
+
+// 3. Runtime Configuration Trait
+// All types and constants go here.
+// Use #[pallet::constant] and #[pallet::extra_constants]
+// to pass in values to metadata.
+#[pallet::config]
+	pub trait Config: frame_system::Config { ... }
+
+// 4. Runtime Storage
+// Use to declare storage items.
+#[pallet::storage]
+	#[pallet::getter(fn something)]
+	pub MyStorage&lt;T: Config&gt; = StorageValue&lt;_, u32&gt;;
+
+// 5. Runtime Events
+// Can stringify event types to metadata.
+#[pallet::event]
+	#[pallet::metadata(T::AccountId = &quot;AccountId&quot;)]
+	#[pallet::generate_deposit(pub(super) fn deposit_event)]
+	pub enum Event&lt;T: Config&gt; { ... }
+
+// 6. Hooks
+// Define some logic that should be executed
+// regularly in some context, for e.g. on_initialize.
+#[pallet::hooks]
+	impl&lt;T: Config&gt; Hooks&lt;BlockNumberFor&lt;T&gt;&gt; for Pallet&lt;T&gt; { ... }
+
+// 7. Extrinsics
+// Functions that are callable from outside the runtime.
+#[pallet::call]
+	impl&lt;T:Config&gt; Pallet&lt;T&gt; { ... }
+
+<span class="boring">}
+</span></code></pre></pre>
+<blockquote>
+<p><strong>Note:</strong> Pallets can be composed of as many sections as needed, giving runtime engineers a lot of flexibility ontop of the basic skeletons depicted above. Refer to the <a href="./macros#substrate-runtime-macros">Substrate Runtime Macros</a> to learn more about adding functionality to a FRAME pallet.</p>
+</blockquote>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>Here is a minimal, working pallet which simply allows a user to put a <code>u64</code> value into storage:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use support::{decl_module, decl_event, decl_storage, StorageValue, StorageMap};
+use system::ensure_signed;
+
+pub trait Config: system::Config {
+	// The traits the `Event` type used in this pallet has.
+	type Event: From&lt;Event&lt;Self&gt;&gt; + Into&lt;&lt;Self as system::Config&gt;::Event&gt;;
+}
+
+decl_event!{
+	pub enum Event&lt;T&gt; where
+		AccountId = &lt;T as system::Config&gt;::AccountId,
+	{
+		// An event which is emitted when `set_value` is called.
+		// Contains information about the user who called the function
+		// and the value they called with.
+		ValueSet(AccountId, u64),
+	}
+}
+
+decl_storage! {
+	trait Store for Module&lt;T: Config&gt; as Example {
+		// The last value passed to `set_value`.
+		// Used as an example of a `StorageValue`.
+		pub LastValue get(fn last_value): u64;
+		// The value each user has put into `set_value`.
+		// Used as an example of a `StorageMap`.
+		pub UserValue get(fn user_value): map T::AccountId =&gt; u64;
+	}
+}
+
+decl_module! {
+	pub struct Module&lt;T: Config&gt; for enum Call where origin: T::Origin {
+		// A default function for depositing events in our runtime
+		fn deposit_event() = default;
+
+		// The only callable function of our runtime module.
+		// Allows a user to set a `u64` value into the runtime storage.
+		pub fn set_value(origin, value: u64) {
+			let sender = ensure_signed(origin)?;
+			LastValue::put(value);
+			UserValue::&lt;T&gt;::insert(&amp;sender, value);
+			Self::deposit_event(RawEvent::ValueSet(sender, value));
+		}
+	}
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>The above example is similar to FRAME's Nicks pallet. For context, see:</p>
+<ul>
+<li>the <a href="https://github.com/paritytech/substrate/blob/master/frame/nicks/src/lib.rs">FRAME v1 of the Nicks Pallet</a></li>
+<li>the <a href="https://github.com/paritytech/substrate/blob/gui-seminar-pallet-migration-nicks-after/frame/nicks/src/lib.rs">FRAME v2 of the Nicks Pallet</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2-frame-101/frame.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2-frame-101/extrinsics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2-frame-101/frame.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2-frame-101/extrinsics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -2,9 +2,9 @@
 authors = ["Dan Shields"]
 language = "en"
 multilingual = false
-src = "tracks"
-title = "devhub-tracks"
-description = "A Substrate Track Model for the Devhub"
+src = "books"
+title = "devhub-books"
+description = "Substrate Devhub Books"
 
 [build]
 build-dir = "docs"

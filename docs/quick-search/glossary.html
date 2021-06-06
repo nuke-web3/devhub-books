@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Glossary - devhub-books</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Substrate Devhub Books">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../OUTLINE.html">(temporary) Structure of Devhub Rework</a></li><li class="chapter-item expanded affix "><a href="../0-overview/devhub-overview.html">Devhub Overview</a></li><li class="chapter-item expanded affix "><a href="../0-overview/before-starting.html">Before Starting</a></li><li class="chapter-item expanded affix "><a href="../0-overview/rust-companion.html">Rust Companion</a></li><li class="chapter-item expanded affix "><li class="part-title">📚 ✔️ Fundamentals</li><li class="chapter-item expanded "><a href="../1-fundamentals/architecture.html"><strong aria-hidden="true">1.</strong> Substrate Architecture</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/index.html"><strong aria-hidden="true">2.</strong> Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1-fundamentals/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/interact.html"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">🏰 FRAME 101</li><li class="chapter-item expanded "><a href="../2-frame-101/index.html"><strong aria-hidden="true">3.</strong> FRAME Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/frame.html"><strong aria-hidden="true">3.1.</strong> Runtime Interface</a></li><li class="chapter-item expanded "><a href="../2-frame-101/pallets.html"><strong aria-hidden="true">3.2.</strong> Pallets</a></li><li class="chapter-item expanded "><a href="../2-frame-101/extrinsics.html"><strong aria-hidden="true">3.3.</strong> Extrinsics</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/index.html"><strong aria-hidden="true">3.4.</strong> 😺 Add a FRAME Pallet</a></li></ol></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/import-a-pallet.html"><strong aria-hidden="true">4.</strong> 😺 Import the Nicks Pallet</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/configure-a-pallet.html"><strong aria-hidden="true">4.1.</strong> 😺 Configure Nicks</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/use-a-pallet.html"><strong aria-hidden="true">4.2.</strong> 😺 Nicks Interaction</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">👷 Runtime Engineering 101</li><li class="chapter-item expanded "><a href="../3-runtime-101/index.html"><strong aria-hidden="true">5.</strong> Runtime Engineering Overview</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Rust for FRAME</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 😺 Build an NFT Pallet</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> NFT UI</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">🕸 Networking 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Network Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> 😺 Local Network</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 👷 Runtime Engineering 201</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Runtime Upgrades 1</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Storage Migrations</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 😺 Add Identity Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 😺 Migrate Nicks -&gt; Identity</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Pallet Coupling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Benchmarking</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 😺 Benchmark A Custom Pallet</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Beyond FRAME</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🤳 Node Clients 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Polakdot.js</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Subtx</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> </div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🦸 DevOps 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Node Types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">17.1.</strong> Full &amp; Archival</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.2.</strong> Light</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Node Telemetry &amp; Metrics</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Visualization w/ Grafana</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Remote Node Ops</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">19.1.</strong> Peering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.2.</strong> Exposing Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Going to Production FAQ</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 💠 Parachain Engineering 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Solo-chains vs. Parachains</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Collators</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">22.1.</strong> Light vs. Full Para-Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.</strong> Cumulus</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">23.1.</strong> 😺 Cumulus Workshop</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">24.</strong> XCM</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 📜 Smart Contracts</li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.</strong> Frontier</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">25.1.</strong> Ethereum Virtual Machine (EVM)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.2.</strong> Ethereum API</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.</strong> Wasm Contrats</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">26.1.</strong> Contracts Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.2.</strong> ink!</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">27.</strong> 😺 Kitties &amp; Contracts</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🔋 Miscellaneous Topics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.</strong> Solo-chains</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">28.1.</strong> Private, Permissioned Networks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.2.</strong> Hybird Enterprise Chains</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Off-Chain Workers</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">29.1.</strong> Specialist Nodes w/ OCW</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">30.</strong> Specialist Nodes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">31.</strong> Oracles</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">32.</strong> SS58 Addresses</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">33.</strong> Bridgeds</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">33.1.</strong> BEEFY</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">🔍️ Quick Search</li><li class="chapter-item expanded "><a href="../quick-search/glossary.html" class="active"><strong aria-hidden="true">34.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="../quick-search/FAQ.html"><strong aria-hidden="true">35.</strong> FAQ</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🙏 Contribute</li><li class="chapter-item expanded "><a href="../contribute/help-translate.html"><strong aria-hidden="true">36.</strong> Help Translate</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-books</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<p>This page defines and explains many of the domain-specific terms that are common to the Substrate
+ecosystem. This is a helpful resource for even the most experienced Substrate developers.</p>
+<hr />
+<h2 id="adaptive-quorum-biasing-aqb"><a class="header" href="#adaptive-quorum-biasing-aqb">Adaptive Quorum Biasing (AQB)</a></h2>
+<p>A means of specifying a passing threshold for a referendum based on voter turnout. Positive turnout
+bias means that as more votes are cast, the passing threshold <em>decreases</em>; i.e. a higher turnout
+positively increases the likelihood of a referendum passing. Negative turnout bias means that the
+passing threshold <em>increases</em> as more votes are cast. Negative turnout bias is also called &quot;default
+carries&quot; as, given an apathetic voting body, the referendum will pass by default. A neutral turnout
+bias specifies a simple majority passing threshold. AQB removes the need for strict quorums, which
+are arbitrary and create undesirable governance mechanics. AQB is implemented in the
+<a href="../runtime/frame#democracy">Democracy pallet</a>, which provides the interfaces for a number of
+on-chain bodies (e.g. a <a href="#council">Collective</a> or any token holder) to call referenda with positive,
+neutral, or negative biases.</p>
+<h2 id="afg"><a class="header" href="#afg">AfG</a></h2>
+<p>An internal codename for &quot;Al's Finality Gadget&quot;, which is named after
+<a href="https://w3f-research.readthedocs.io/en/latest/team_members/alistair.html">Alistair Stewart</a>
+who invented it. AfG is synonymous with <a href="#grandpa">GRANDPA</a>.</p>
+<h2 id="aggregation"><a class="header" href="#aggregation">Aggregation</a></h2>
+<p>Used in the context of <a href="#frame">FRAME</a>, &quot;<a href="#pallet">pallet</a> aggregation&quot; means combining analogous
+types from multiple runtime modules into a single type. This allows each module's analogous types to
+be represented. Currently there are six such data types:</p>
+<ul>
+<li><code>Call</code> - published functions that may be called with a set of arguments</li>
+<li><code>Error</code> - used to inform users why a function invocation (<code>Call</code>) failed</li>
+<li><code>Event</code> - pallets can emit events to make users aware of some state changes</li>
+<li><code>Log</code> - an extensible header item</li>
+<li><code>Metadata</code> - information that allows inspection of the above</li>
+<li><code>Origin</code> - specifies the source of a function invocation (<code>Call</code>)</li>
+</ul>
+<h2 id="approval-voting"><a class="header" href="#approval-voting">Approval Voting</a></h2>
+<p>Voting system where voter can vote for as many candidates as desired. The candidate with highest
+overall amount of votes wins. Notably:</p>
+<ul>
+<li>voting for all candidates is exactly equivalent to voting for none; and</li>
+<li>it is possible to vote &quot;against&quot; a single candidate by voting for all other candidates.</li>
+</ul>
+<p>Approval voting is used by the
+<a href="../runtime/frame#elections-phragmen">FRAME Elections Phragmen pallet</a> that materializes as a
+governing <a href="#council">Council</a> on a number of Substrate-based chains.</p>
+<h2 id="author"><a class="header" href="#author">Author</a></h2>
+<p>The <a href="#node">node</a> that is responsible for the creation of a <a href="#block">block</a>; block authors may be
+referred to as block &quot;producers&quot;. In a proof-of-work chain these nodes are called &quot;miners&quot;.</p>
+<h2 id="authority"><a class="header" href="#authority">Authority</a></h2>
+<p>Authorities are the <a href="#node">nodes</a> who, as a collective, manage <a href="#consensus">consensus</a> on a
+<a href="#blockchain">blockchain</a> network. In a <a href="#nominated-proof-of-stake-npos">proof-of-stake</a> network
+(such as one using <a href="../runtime/frame#staking">the Staking pallet</a> from <a href="#frame">FRAME</a>), authorities
+are determined through a token-weighted nomination/voting system.</p>
+<blockquote>
+<p>The terms &quot;authorities&quot; and &quot;<a href="#validator">validators</a>&quot; may sometimes seem to refer the same thing.
+&quot;Validators&quot; is a broader term that can include other aspects of chain maintenance such as
+parachain validation. In general authorities are a (non-strict) subset of validators and many
+validators will be authorities.</p>
+</blockquote>
+<h2 id="aura-aka-authority-round"><a class="header" href="#aura-aka-authority-round">Aura (aka &quot;Authority Round&quot;)</a></h2>
+<p>Deterministic <a href="#consensus">consensus</a> protocol where <a href="#block">block</a> production is limited to a
+rotating list of <a href="#authority">authorities</a> that take turns creating blocks; the majority of online
+authorities are assumed to be honest. Learn more by reading
+<a href="https://openethereum.github.io/Aura">the official wiki article</a> for the Aura consensus
+algorithm.</p>
+<h3 id="aura--grandpa"><a class="header" href="#aura--grandpa">Aura + GRANDPA</a></h3>
+<p>A <a href="#hybrid-consensus">hybrid consensus</a> scheme where <a href="#aura">Aura</a> is used for block production and
+short-term <a href="#probabilistic-finality">probabilistic finality</a>, with
+<a href="#deterministic-finality">deterministic finality</a> provided through <a href="#grandpa">GRANDPA</a>.</p>
+<hr />
+<h2 id="blind-assignment-of-blockchain-extension-babe"><a class="header" href="#blind-assignment-of-blockchain-extension-babe">Blind Assignment of Blockchain Extension (BABE)</a></h2>
+<p><a href="#author">Block authoring</a> protocol similar to <a href="#aura">Aura</a>, however <a href="#authority">authorities</a> win
+<a href="#slot">slots</a> based on a verifiable random function (VRF) as opposed to Aura's round-robin
+selection method. The winning authority can select a chain and submit a new block for it. Learn more
+about BABE by referring to its
+<a href="https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html">official Web3 Foundation research document</a>.</p>
+<h2 id="block"><a class="header" href="#block">Block</a></h2>
+<p>A single element of a blockchain that <a href="#cryptographic-primitives">cryptographically</a> binds a set of
+<a href="#extrinsic">extrinsic</a> data (the &quot;body&quot;) to a &quot;<a href="#header">header</a>&quot;. Blocks are arranged into a tree
+through parent pointers (implemented as a hash of the parent) and the tree is pruned into a list via
+a <a href="../advanced/consensus#fork-choice-rules">fork-choice rule</a>, and optional
+<a href="#finality">finality gadget</a>.</p>
+<h2 id="blockchain"><a class="header" href="#blockchain">Blockchain</a></h2>
+<p>A blockchain is a distributed network of computers that uses
+<a href="#cryptographic-primitives">cryptography</a> to allow a group of participants to trustlessly come to
+<a href="#consensus">consensus</a> on the <a href="#state">state</a> of a system as it evolves over time. The computers
+that compose the blockchain network are called <a href="#node">nodes</a>.</p>
+<h2 id="byzantine-fault-tolerance-bft"><a class="header" href="#byzantine-fault-tolerance-bft">Byzantine Fault Tolerance (BFT)</a></h2>
+<p>The ability of a distributed computer system to remain operational in the face of a proportion of
+defective <a href="#node">nodes</a> or <a href="#authority">actors</a>. &quot;Byzantine&quot; refers to the ultimate level of
+defectiveness, with such nodes assumed to be actively malicious and coordinating rather than merely
+offline or buggy. Typically, BFT systems remain functional with up to around one-third of Byzantine
+nodes.</p>
+<h3 id="byzantine-failure"><a class="header" href="#byzantine-failure">Byzantine Failure</a></h3>
+<p>The loss of a system service due to a Byzantine Fault (i.e. components in the system fail and there
+is imperfect information about whether a component has failed) in systems that require consensus.</p>
+<h3 id="practical-byzantine-fault-tolerance-pbft"><a class="header" href="#practical-byzantine-fault-tolerance-pbft">Practical Byzantine Fault Tolerance (pBFT)</a></h3>
+<p>An early approach to Byzantine fault tolerance. pBFT systems tolerate Byzantine behavior from up to
+one-third of participants. The communication overhead for such systems is <code>O(n²)</code>, where <code>n</code> is the
+number of nodes (participants) in the system.</p>
+<hr />
+<h2 id="consensus"><a class="header" href="#consensus">Consensus</a></h2>
+<p>In the context of a <a href="#blockchain">blockchain</a>, consensus is the process nodes use to agree on the
+canonical <a href="#fork">fork</a> of a chain. Consensus is comprised of <a href="#author">authorship</a>,
+<a href="#finality">finality</a>, and <a href="../advanced/consensus#fork-choice-rules">fork-choice rule</a>. In the
+Substrate ecosystem, these three components are cleanly separated from one another, and the term
+consensus often refers specifically to authorship.</p>
+<h3 id="consensus-engine"><a class="header" href="#consensus-engine">Consensus Engine</a></h3>
+<p>A subsystem of a Substrate <a href="#node">node</a> that is responsible for consensus tasks.</p>
+<h3 id="consensus-algorithms"><a class="header" href="#consensus-algorithms">Consensus Algorithms</a></h3>
+<p>An algorithm that is able to ensure that a set of <a href="#authority">actors</a>, who don't necessarily trust
+each other, can come to consensus over some computation. Often mentioned alongside &quot;<strong>safety</strong>&quot; (the
+ability to ensure that any progression will eventually be agreed as having happened by all honest
+nodes) and &quot;<strong>liveness</strong>&quot; (the ability to keep making progress). Many consensus algorithm are
+referred to as being <a href="#byzantine-fault-tolerance-bft">Byzantine-fault-tolerant</a>.</p>
+<p>There is
+<a href="https://polkadot.network/polkadot-consensus-part-1-introduction/">a comprehensive blog series</a> that
+provides a deep dive into the consensus strategies of <a href="#polkadot-network">the Polkadot Network</a>.</p>
+<h3 id="hybrid-consensus"><a class="header" href="#hybrid-consensus">Hybrid Consensus</a></h3>
+<p>A blockchain consensus protocol that consists of independent or loosely coupled mechanisms for
+<a href="#author">block production</a> and <a href="#finality">finality</a>. This allows the chain to grow as fast as
+probabilistic consensus protocols, such as <a href="#aura-aka-authority-round">Aura</a>, while still maintaining the same level of
+security as <a href="#deterministic-finality">deterministic finality</a> consensus protocols, such as
+<a href="#grandpa">GRANDPA</a>. In general, block production algorithms tend to be faster than finality
+mechanisms; separating these concerns gives Substrate developers greater control of their chain's
+performance.</p>
+<h2 id="cryptographic-primitives"><a class="header" href="#cryptographic-primitives">Cryptographic Primitives</a></h2>
+<p>A term that refers to concepts like signature schemes and hashing algorithms. Cryptographic
+primitives are essential to many aspects of the Substrate ecosystem:</p>
+<ul>
+<li><a href="#blockchain">Blockchains</a>: <a href="#block">blocks</a> must be hashed under some algorithm and reference
+their parent block's hash.</li>
+<li><a href="#state">State</a>: Substrate storage is encoded as a <a href="#trie-patricia-merkle-tree">trie</a>, a data
+structure that uses hashing to facilitate efficient verification.</li>
+<li><a href="#consensus">Consensus</a>: <a href="#authority">authorities</a> often use digital signature schemes of some
+kind.</li>
+<li><a href="#transaction">Transaction</a> authentication: in <a href="#runtime">runtimes</a> where transactions and
+<a href="../learn-substrate/account-abstractions">accounts</a> are used, accounts are identified and
+authenticated through the use of cryptography.</li>
+</ul>
+<h2 id="council"><a class="header" href="#council">Council</a></h2>
+<p>The term &quot;Council&quot; is used on a number of Substrate-based networks, such as <a href="#kusama">Kusama</a> and
+<a href="#polkadot">Polkadot</a> to refer to an instance of
+<a href="../runtime/frame#collective">the Collective pallet</a> that is used as a part of the network's
+<a href="#frame">FRAME</a>-based <a href="#runtime">runtime</a>. The Council primarily serves as a body to optimize and
+check/balance the more inclusive referendum system.</p>
+<hr />
+<h2 id="database-backend"><a class="header" href="#database-backend">Database Backend</a></h2>
+<p>The means by which the <a href="#state">state</a> of a <a href="#blockchain">blockchain</a> network is persisted between
+invocations of the <a href="#node">blockchain node</a> application. There is
+<a href="../advanced/storage">documentation</a> that explains the implementation of the database backend that
+is used by Substrate-based chains.</p>
+<h2 id="dev-phrase"><a class="header" href="#dev-phrase">Dev Phrase</a></h2>
+<p>A
+<a href="https://en.wikipedia.org/wiki/Mnemonic#For_numerical_sequences_and_mathematical_operations">mnemonic phrase</a>
+that is intentionally made public. All of the
+<a href="../integrate/subkey#well-known-keys">well-known development accounts</a> (Alice, Bob, Charlie, Dave,
+Ferdie, and Eve) are generated from the same dev phrase. The dev phrase is:
+<code>bottom drive obey lake curtain smoke basket hold race lonely fit walk</code>.</p>
+<p>Many tools in the Substrate ecosystem, such as <a href="../integrate/subkey"><code>subkey</code></a>, allow users to
+implicitly specify the dev phrase by only specifying a derivation path such as <code>//Alice</code>.</p>
+<h2 id="digest"><a class="header" href="#digest">Digest</a></h2>
+<p>An extensible field of the <a href="#header">block header</a> that encodes information needed by several actors
+in a blockchain network including, <a href="#light-client">light clients</a> for chain synchronization,
+consensus engines for block verification, and the runtime itself in the case of pre-runtime digests.</p>
+<h2 id="dispatch"><a class="header" href="#dispatch">Dispatch</a></h2>
+<p>A dispatch is the execution of a function with a pre-defined set of arguments. In the context of
+<a href="#runtime">runtime</a> development with <a href="#frame">FRAME</a>, this refers specifically to the &quot;runtime
+dispatch&quot; system, a means of taking some pure data (the type is known as <code>Call</code> by convention) and
+interpreting it in order to call a published function in a runtime module (&quot;<a href="#pallet">pallet</a>&quot;) with
+some arguments. Such published functions take one additional parameter, known as
+<a href="#origin"><code>origin</code></a>, that allows the function to securely determine the provenance of its execution.</p>
+<hr />
+<h2 id="equivocating"><a class="header" href="#equivocating">Equivocating</a></h2>
+<p>A type of <a href="#byzantine-fault-tolerance-bft">Byzantine</a> (erroneous/malicious) behavior that involves
+backing multiple mutually-exclusive options within the <a href="#consensus">consensus</a> mechanism.</p>
+<h2 id="ethash"><a class="header" href="#ethash">Ethash</a></h2>
+<p>A function used by some <a href="#proof-of-work">proof-of-work</a> <a href="#consensus">consensus</a> systems, notably
+that which is used by the Ethereum blockchain. It was developed by
+<a href="https://github.com/ethereum/ethash/graphs/contributors">a team led by Tim Hughes</a>.</p>
+<h2 id="events"><a class="header" href="#events">Events</a></h2>
+<p>A means of recording, for the benefit of the off-chain world, that some particular <a href="#state">state</a>
+transition happened. Within the context of <a href="#frame">FRAME</a>, events are one of a number of composable
+data types that each <a href="#pallet">pallet</a> may individually define. Events in FRAME are implemented as a
+set of transient storage items that are inspected immediately after a block has executed and reset
+during block-initialization.</p>
+<h2 id="executor"><a class="header" href="#executor">Executor</a></h2>
+<p>A means of executing a function call in a given <a href="#runtime">runtime</a> with a set of dependencies.
+There are two <a href="../../knowledgebase/advanced/executor">executor</a> implementations present in
+Substrate, <em>Wasm</em> and <em>Native</em>.</p>
+<h3 id="native-executor"><a class="header" href="#native-executor">Native Executor</a></h3>
+<p>This executor uses a natively compiled runtime embedded in the <a href="#node">node</a> to execute calls. This
+is a performance optimization that up-to-date nodes can take advantage of.</p>
+<h3 id="wasm-executor"><a class="header" href="#wasm-executor">Wasm Executor</a></h3>
+<p>This executor uses a <a href="#webassembly-wasm">Wasm</a> binary and a Wasm interpreter to execute calls. The
+binary is guaranteed to be up-to-date regardless of the version of the blockchain <a href="#node">node</a>
+since it is persisted in the <a href="#state">state</a> of the Substrate-based chain.</p>
+<h2 id="extrinsic"><a class="header" href="#extrinsic">Extrinsic</a></h2>
+<p>A piece of data that is bundled into a <a href="#block">block</a> in order to express something from the
+&quot;external&quot; (i.e. off-chain) world. There are, broadly speaking, two types of extrinsics:
+transactions, which may be
+<a href="../../knowledgebase/learn-substrate/extrinsics#signed-transactions">signed</a> or
+<a href="../../knowledgebase/learn-substrate/extrinsics#unsigned-transactions">unsigned</a>, and
+<a href="../../knowledgebase/learn-substrate/extrinsics#inherents">inherents</a>, which are inserted by
+<a href="#author">block authors</a>.</p>
+<h2 id="existential-deposit"><a class="header" href="#existential-deposit">Existential Deposit</a></h2>
+<p>Within the <a href="../../knowledgebase/runtime/frame#balances">Balances pallet</a>, this is the minimum
+balance an account may have. Accounts cannot be created with a balance less than this amount, and if
+an account's balance ever drops below this amount, the Balances pallet will use
+<a href="https://substrate.dev/rustdocs/v3.0.0/frame_system/pallet/struct.Pallet.html#method.dec_ref">a FRAME System API</a>
+to drop its references to that account. If all the references to an account are dropped, it
+<a href="https://substrate.dev/rustdocs/v3.0.0/frame_system/pallet/struct.Pallet.html#method.allow_death">may be reaped</a>.</p>
+<hr />
+<h2 id="finality"><a class="header" href="#finality">Finality</a></h2>
+<p>A part of <a href="#consensus">consensus</a> that deals with making a progression irreversible. If a
+<a href="#block">block</a> is &quot;finalized&quot;, then any <a href="#state">state</a> changes it encapsulates are irreversible
+without a hard fork and it is safe to effect any off-chain repercussions that depend on them. The
+consensus algorithm <em>must</em> guarantee that finalized blocks never need reverting.</p>
+<p><a href="#grandpa">GRANDPA</a> is the <a href="#deterministic-finality">deterministic finality</a> gadget that is used by
+the <a href="#polkadot-network">Polkadot Network</a>.</p>
+<h3 id="deterministic-finality"><a class="header" href="#deterministic-finality">Deterministic Finality</a></h3>
+<p>In these systems, all blocks are guaranteed to be the canonical block for that chain upon block
+inclusion. Deterministic finality is desirable in situations where the full chain is not available,
+such as in the case of <a href="#light-client">light clients</a>. <a href="#grandpa">GRANDPA</a> is a deterministic
+finality gadget.</p>
+<h3 id="instant-finality"><a class="header" href="#instant-finality">Instant Finality</a></h3>
+<p>A non-probabilistic consensus protocol that gives a guarantee of finality immediately upon block
+production. These tend to be <a href="#practical-byzantine-fault-tolerance-pbft">pBFT</a>-based and thus very
+expensive in terms of communication requirements.</p>
+<h3 id="probabilistic-finality"><a class="header" href="#probabilistic-finality">Probabilistic Finality</a></h3>
+<p>In these systems, finality is expressed in terms of a probability, denoted by <code>p</code>, that a proposed
+block, denoted by <code>B</code>, will remain in the canonical chain; as more blocks are produced on top of
+<code>B</code>, <code>p</code> approaches 1.</p>
+<h3 id="proof-of-finality"><a class="header" href="#proof-of-finality">Proof-of-Finality</a></h3>
+<p>A piece of data that can be used to prove that a particular block is finalized.</p>
+<h2 id="fork"><a class="header" href="#fork">Fork</a></h2>
+<p>Forks occur when two <a href="#block">blocks</a> have the same parent. Forks must be
+<a href="../advanced/consensus#fork-choice-rules">resolved</a> so that only one canonical chain exists.</p>
+<h2 id="flaming-fir"><a class="header" href="#flaming-fir">Flaming Fir</a></h2>
+<p>Flaming Fir is a <a href="https://www.parity.io/">Parity</a>-maintained Substrate-based
+<a href="#blockchain">blockchain</a> that exists for developing and testing the Substrate blockchain
+development framework.</p>
+<h2 id="frame"><a class="header" href="#frame">FRAME</a></h2>
+<p><a href="../runtime/frame">FRAME</a> is Substrate's system for <a href="#runtime"><strong>runtime</strong></a> development. The name is
+an acronym for the &quot;Framework for Runtime Aggregation of Modularized Entities&quot;. FRAME allows
+developers to create blockchain runtimes by composing modules, called &quot;<a href="#pallet">pallets</a>&quot;. Runtime
+developers interact with FRAME by way of a <a href="#macro">macro</a> language that makes it easy for
+developers to define custom pallets (e.g. <a href="../runtime/macros#decl_event"><code>decl_event!</code></a>,
+<a href="../runtime/macros#decl_error"><code>decl_error!</code></a>, <a href="../runtime/macros#decl_storage"><code>decl_storage!</code></a>,
+<a href="../runtime/macros#decl_module"><code>decl_module!</code></a> and compose pallets (e.g.
+<a href="../runtime/macros#construct_runtime"><code>construct_runtime!</code></a> into a working runtime that can easily
+be used to power a Substrate-based blockchain. The convention used in
+<a href="https://github.com/paritytech/substrate/tree/master/frame">the Substrate codebase</a> is to preface
+FRAME's core modules with <code>frame_</code> and the optional pallets with <code>pallet_*</code>. For instance, the
+macros mentioned above are all defined in the <a href="../runtime/frame#support-library"><code>frame_support</code></a>
+module and all FRAME-based runtimes <em>must</em> include the
+<a href="../runtime/frame#system-library"><code>frame_system</code></a> module. Once the
+<code>frame_support::construct_runtime</code> macro has been used to create a runtime that includes the
+<code>frame_system</code> module, optional pallets such as the <a href="../runtime/frame#balances">Balances</a> pallet may
+be used to extend the runtimes core capabilities.</p>
+<h2 id="full-client"><a class="header" href="#full-client">Full Client</a></h2>
+<p>A <a href="#node">node</a> that is able to synchronize a block chain in a maximally secure manner through
+execution (and thus verification) of all logic. Full clients stand in contrast to
+<a href="#light-client">light clients</a>.</p>
+<hr />
+<h2 id="genesis-configuration"><a class="header" href="#genesis-configuration">Genesis Configuration</a></h2>
+<p>A mechanism for specifying the initial (genesis) <a href="#state">state</a> of a <a href="#blockchain">blockchain</a>.
+Genesis configuration of Substrate-based chains is accomplished by way of a
+<a href="../../knowledgebase/integrate/chain-spec">chain specification</a> file, which makes it easy to use a
+single Substrate codebase to underpin multiple independently configured chains.</p>
+<h2 id="grandpa"><a class="header" href="#grandpa">GRANDPA</a></h2>
+<p>A <a href="#deterministic-finality">deterministic finality</a> gadget for <a href="#blockchain">blockchains</a> that is
+implemented in the <a href="https://www.rust-lang.org/">Rust</a> programming language. The
+<a href="https://github.com/w3f/consensus/blob/master/pdf/grandpa-old.pdf">formal specification</a> is
+maintained by the <a href="https://web3.foundation/">Web3 Foundation</a></p>
+<hr />
+<h2 id="header"><a class="header" href="#header">Header</a></h2>
+<p>A structure that is used to aggregate pieces of (primarily
+<a href="#cryptographic-primitives">cryptographic</a>) information that summarize a <a href="#block">block</a>. This
+information is used by <a href="#light-client">light-clients</a> to get a minimally-secure but very efficient
+synchronization of the chain.</p>
+<hr />
+<h2 id="keystore"><a class="header" href="#keystore">Keystore</a></h2>
+<p>A subsystem in Substrate for managing keys for the purpose of producing new blocks.</p>
+<h2 id="kusama"><a class="header" href="#kusama">Kusama</a></h2>
+<p><a href="https://kusama.network/">Kusama</a> is a Substrate-based <a href="#blockchain">blockchain</a> that implements a
+design similar to the <a href="#polkadot-network">Polkadot Network</a>. Kusama is a
+&quot;<a href="https://en.wiktionary.org/wiki/canary_in_a_coal_mine">canary</a>&quot; network and is referred to as
+<a href="https://polkadot.network/kusama-polkadot-comparing-the-cousins/">Polkadot's &quot;wild cousin&quot;</a>. The
+differences between a canary network and a true test network are related to the expectations of
+permanence and stability; although Kusama is expected to be more stable than a true test network,
+like <a href="#westend">Westend</a>, it should not be expected to be as stable as an enterprise production
+network like <a href="#polkadot">Polkadot</a>. Unlike Westend, which is maintained by
+<a href="https://www.parity.io/">Parity Technologies</a>, Kusama (like Polkadot) is
+<a href="../runtime/frame#democracy">controlled by its network participants</a>. The level of stability offered
+by canary networks like Kusama is intended to encourage meaningful experimentation.</p>
+<hr />
+<h2 id="libp2p"><a class="header" href="#libp2p">libp2p</a></h2>
+<p>A peer-to-peer networking stack that allows use of many transport mechanisms, including WebSockets
+(usable in a web browser). Substrate uses the
+<a href="https://github.com/libp2p/rust-libp2p">Rust implementation</a> of the libp2p networking stack.</p>
+<h2 id="light-client"><a class="header" href="#light-client">Light Client</a></h2>
+<p>A light client is a type of blockchain <a href="#node">node</a> that does not store the <a href="#state">chain state</a>
+or produce (<a href="#author">author</a>) blocks. It encapsulates basic capabilities for verifying
+<a href="#cryptographic-primitives">cryptographic primitives</a> and exposes an
+<a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC (remote procedure call)</a> server to allow
+blockchain users to interact with the blockchain network.</p>
+<hr />
+<h2 id="macro"><a class="header" href="#macro">Macro</a></h2>
+<p>Macros are features of some programming languages,
+<a href="https://doc.rust-lang.org/1.7.0/book/macros.html">including Rust</a>, that allow developers to &quot;write
+code that writes code&quot;. <a href="#frame">FRAME</a> provides a number of <a href="../runtime/macros">macros</a> that make
+it easy to compose a <a href="#runtime">runtime</a>.</p>
+<h2 id="metadata"><a class="header" href="#metadata">Metadata</a></h2>
+<p>Metadata is information about a system, such as a <a href="#blockchain">blockchain</a>, that makes it easier to
+interact with that system. Blockchain <a href="#runtime">runtimes</a> that are built with <a href="#frame">FRAME</a>
+expose <a href="../../knowledgebase/runtime/metadata">lots of helpful metadata</a>.</p>
+<hr />
+<h2 id="node"><a class="header" href="#node">Node</a></h2>
+<p>A node correlates to a running instance of a blockchain client; it is part of the
+<a href="https://en.wikipedia.org/wiki/Peer-to-peer">peer-to-peer</a> network that allows blockchain
+participants to interact with one another. Substrate nodes can fill a number of roles in a
+blockchain network. For instance, <a href="#validator">validators</a> are the block-producing nodes that power
+the blockchain, while <a href="#light-client">light-clients</a> facilitate scalable interactions in
+resource-constrained environments like <a href="https://github.com/paritytech/substrate-connect">UIs</a> or
+embedded devices.</p>
+<h2 id="nominated-proof-of-stake-npos"><a class="header" href="#nominated-proof-of-stake-npos">Nominated Proof-of-Stake (NPoS)</a></h2>
+<p>A means of determining a set of <a href="#validator">validators</a> (and thus <a href="#authority">authorities</a>) from a
+number of accounts willing to commit their stake to the proper (non-<a href="#byzantine-failure">Byzantine</a>)
+functioning of one or more <a href="#author">authoring</a>/validator nodes. The Polkadot protocol describes
+validator selection as a constraint optimization problem to eventually give a maximally staked set
+of validators each with a number of supporting nominators lending their stake. Slashing and rewards
+are done in a pro-rata manner.</p>
+<hr />
+<h2 id="origin"><a class="header" href="#origin">Origin</a></h2>
+<p>A <a href="#frame">FRAME</a> primitive that identifies the source of a <a href="#dispatch">dispatched</a> function call
+into the <a href="#runtime">runtime</a>. The FRAME System module defines
+<a href="../../knowledgebase/runtime/origin#raw-origins">three built-in origins</a>; <a href="#pallet">pallet</a>
+developers can easily define custom origins, such as those defined by the
+<a href="https://substrate.dev/rustdocs/v3.0.0/pallet_collective/enum.RawOrigin.html">Collective pallet</a>.</p>
+<hr />
+<h2 id="parachain"><a class="header" href="#parachain">Parachain</a></h2>
+<p>A parachain is a <a href="#blockchain">blockchain</a> that derives shared infrastructure and security from a
+&quot;<a href="#relay-chain">relay chain</a>&quot;. You can
+<a href="https://wiki.polkadot.network/docs/en/learn-parachains">learn more about parachains on the Polkadot Wiki</a>.</p>
+<h2 id="pallet"><a class="header" href="#pallet">Pallet</a></h2>
+<p>A module that can be used to extend the capabilities of a <a href="#frame">FRAME</a>-based <a href="#runtime">runtime</a>.
+Pallets bundle domain-specific logic along with related runtime primitives like <a href="#event">events</a>,
+and <a href="#storage-items">storage items</a>.</p>
+<h2 id="polkadot-network"><a class="header" href="#polkadot-network">Polkadot Network</a></h2>
+<p>The <a href="https://polkadot.network/">Polkadot Network</a> is a <a href="#blockchain">blockchain</a> that serves as the
+central hub of a heterogeneous blockchain network. It serves the role of
+&quot;<a href="#relay-chain">relay chain</a>&quot; and supports the other chains (the &quot;<a href="#parachain">parachains</a>&quot;) by
+providing shared infrastructure and security. The Polkadot Network is progressing through a
+<a href="https://polkadot.network/explaining-the-polkadot-launch-process/">multi-phase launch process</a> and
+does not currently support parachains.</p>
+<h2 id="proof-of-work"><a class="header" href="#proof-of-work">Proof-of-Work</a></h2>
+<p>A <a href="#consensus">consensus</a> mechanism that deters attacks by requiring work on the part of network
+participants. For instance, some proof-of-work systems require participants to use the
+<a href="#ethash">Ethash</a> function to calculate a hash as a proof of completed work.</p>
+<hr />
+<h2 id="relay-chain"><a class="header" href="#relay-chain">Relay Chain</a></h2>
+<p>The central hub in a heterogenous (&quot;chain-of-chains&quot;) network. Relay chains are
+<a href="#blockchain">blockchains</a> that provide shared infrastructure and security to the other blockchains
+in the network (the &quot;<a href="#parachain">parachains</a>&quot;). In addition to providing <a href="#consensus">consensus</a>
+capabilities, relay chains also allow parachains to communicate and exchange digital assets without
+needing to trust one another.</p>
+<h2 id="remote-procedure-call-rpc"><a class="header" href="#remote-procedure-call-rpc">Remote Procedure Call (RPC)</a></h2>
+<p>A mechanism for interacting with a computer program that allows developers to easily query the
+computer program or even invoke its logic with parameters they supply. Substrate nodes expose an RPC
+server on HTTP and WebSocket endpoints.</p>
+<h3 id="json-rpc"><a class="header" href="#json-rpc">JSON-RPC</a></h3>
+<p>A standard way to call functions on a remote system by using a JSON protocol. For Substrate, this is
+implemented through the <a href="https://github.com/paritytech/jsonrpc">Parity JSON-RPC</a> crate.</p>
+<h2 id="rhododendron"><a class="header" href="#rhododendron">Rhododendron</a></h2>
+<p>An <a href="#instant-finality">instant finality</a>,
+<a href="#byzantine-fault-tolerance-bft">Byzantine fault tolerant (BFT)</a> <a href="#consensus">consensus</a> algorithm.
+One of a number of adaptions of <a href="#practical-byzantine-fault-tolerance-pbft">pBFT</a> for blockchains.
+Refer to its <a href="https://github.com/paritytech/rhododendron">implementation on GitHub</a>.</p>
+<h2 id="rococo"><a class="header" href="#rococo">Rococo</a></h2>
+<p>Rococo is the <a href="#polkadot">Polkadot</a> Network's <a href="#parachain">parachain</a> test network. It is a
+Substrate-based <a href="#blockchain">blockchain</a> that is an evolving testbed for the capabilities of
+heterogeneous blockchain networks.</p>
+<h2 id="runtime"><a class="header" href="#runtime">Runtime</a></h2>
+<p>The block execution logic of a blockchain, i.e. the
+<a href="#state-transition-function-stf">state transition function</a>. In Substrate, this is stored as a
+<a href="#webassembly-wasm">WebAssembly</a> binary in the <a href="#state">chain state</a>.</p>
+<hr />
+<h2 id="slot"><a class="header" href="#slot">Slot</a></h2>
+<p>A fixed, equal interval of time used by consensus engines such as <a href="#aura-aka-authority-round">Aura</a>
+and <a href="#blind-assignment-of-blockchain-extension-babe">BABE</a>. In each slot, a subset of
+<a href="#authority">authorities</a> is permitted (or obliged, depending on the engine) to <a href="#author">author</a> a
+<a href="#block">block</a>.</p>
+<h2 id="stake-weighted-voting"><a class="header" href="#stake-weighted-voting">Stake-Weighted Voting</a></h2>
+<p>Democratic voting system that uses one-vote-per-token, rather than one-vote-per-head.</p>
+<h2 id="state"><a class="header" href="#state">State</a></h2>
+<p>In a <a href="#blockchain">blockchain</a>, the state refers to the cryptographically secure data that persists
+between blocks and can be used to create new blocks as part of the state transition function. In
+Substrate-based blockchains, state is stored in a <a href="#trie-patricia-merkle-tree">trie</a>, a data structure that supports the
+efficient creation of incremental digests. This trie is exposed to the <a href="#runtime">runtime</a> as
+<a href="../../knowledgebase/advanced/storage">a simple key/value map</a> where both keys and values can be
+arbitrary byte arrays.</p>
+<h2 id="state-transition-function-stf"><a class="header" href="#state-transition-function-stf">State Transition Function (STF)</a></h2>
+<p>The logic of a <a href="#blockchain">blockchain</a> that determines how the state changes when a
+<a href="#block">block</a> is processed. In Substrate, this is effectively equivalent to the
+<a href="#runtime">runtime</a>.</p>
+<h2 id="storage-items"><a class="header" href="#storage-items">Storage Items</a></h2>
+<p><a href="#frame">FRAME</a> primitives that provide type-safe data persistence capabilities to the
+<a href="#runtime">runtime</a>. Learn more about storage items in the Knowledge Base article for
+<a href="../../knowledgebase/runtime/storage">runtime storage</a>.</p>
+<h2 id="substrate"><a class="header" href="#substrate">Substrate</a></h2>
+<p>A flexible framework for building modular, efficient, and upgradeable <a href="#blockchain">blockchains</a>.
+Substrate is written in the <a href="https://www.rust-lang.org/">Rust</a> programming language and is
+maintained by <a href="https://www.parity.io/">Parity Technologies</a>.</p>
+<hr />
+<h2 id="transaction"><a class="header" href="#transaction">Transaction</a></h2>
+<p>A type of <a href="#extrinsic">extrinsic</a> that can be safely gossiped between <a href="#node">nodes</a> on the network
+thanks to efficient <a href="#cryptographic-primitives">verification</a> through
+<a href="../../knowledgebase/learn-substrate/extrinsics#signed-transactions">signatures</a> or
+<a href="../../knowledgebase/learn-substrate/extrinsics#signed-extension">signed extensions</a>.</p>
+<h2 id="transaction-era"><a class="header" href="#transaction-era">Transaction Era</a></h2>
+<p>A definable period, expressed as a range of <a href="#block">block</a> numbers, where a transaction may be
+included in a block. Transaction eras are used to protect against transaction replay attacks in the
+event that an account is reaped and its (replay-protecting) nonce is reset to zero.</p>
+<h2 id="transaction-pool"><a class="header" href="#transaction-pool">Transaction Pool</a></h2>
+<p>A collection of transactions that are not yet included in <a href="#block">blocks</a> but have been determined
+to be valid.</p>
+<h3 id="tagged-transaction-pool"><a class="header" href="#tagged-transaction-pool">Tagged Transaction Pool</a></h3>
+<p>A generic Substrate-based transaction pool implementation that allows the <a href="#runtime">runtime</a> to
+specify whether a given transaction is valid, how it should be prioritized, and how it relates to
+other transactions in the pool in terms of dependency and mutual-exclusivity. It is designed to be
+easily extensible and general enough to express both the
+<a href="https://github.com/danforbes/danforbes/blob/master/writings/utxo.md">UTXO</a> and account-based
+transaction models.</p>
+<h2 id="trie-patricia-merkle-tree"><a class="header" href="#trie-patricia-merkle-tree">Trie (Patricia Merkle Tree)</a></h2>
+<p>An data structure that is used to represent sets of items where:</p>
+<ul>
+<li>a cryptographic digest of the dataset is needed; and/or</li>
+<li>it is cheap to recompute the digest with incremental changes to the dataset even when it is very
+large; and/or</li>
+<li>a concise proof that the dataset contains some item/pair (or lacks it) is needed.</li>
+</ul>
+<hr />
+<h2 id="validator"><a class="header" href="#validator">Validator</a></h2>
+<p>A semi-trusted (or untrusted but well-incentivized) actor that helps maintain a
+<a href="#blockchain">blockchain</a> network. In Substrate, validators broadly correspond to the
+<a href="#authority">authorities</a> running the <a href="#consensus">consensus</a> system. In
+<a href="#polkadot-network">Polkadot</a>, validators also manage other duties such as guaranteeing data
+availability and validating <a href="#parachain">parachain</a> candidate <a href="#block">blocks</a>.</p>
+<hr />
+<h2 id="webassembly-wasm"><a class="header" href="#webassembly-wasm">WebAssembly (Wasm)</a></h2>
+<p>An execution architecture that allows for the efficient, platform-neutral expression of
+deterministic, machine-executable logic. <a href="https://webassembly.org/">Wasm</a> is easily compiled from
+the <a href="http://rust-lang.org/">Rust</a> programming language and is used by Substrate-based chains to
+provide portable <a href="#runtime">runtimes</a> that can be included as part of the chain's <a href="#state">state</a>.</p>
+<h2 id="westend"><a class="header" href="#westend">Westend</a></h2>
+<p>Westend is a <a href="https://www.parity.io/">Parity</a>-maintained, Substrate-based <a href="#blockchain">blockchain</a>
+that serves as the test network for <a href="#polkadot">the Polkadot Network</a>.</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../3-runtime-101/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../quick-search/FAQ.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../3-runtime-101/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../quick-search/FAQ.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

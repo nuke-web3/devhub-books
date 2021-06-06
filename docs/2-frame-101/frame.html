@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Runtime Interface - devhub-books</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Substrate Devhub Books">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../OUTLINE.html">(temporary) Structure of Devhub Rework</a></li><li class="chapter-item expanded affix "><a href="../0-overview/devhub-overview.html">Devhub Overview</a></li><li class="chapter-item expanded affix "><a href="../0-overview/before-starting.html">Before Starting</a></li><li class="chapter-item expanded affix "><a href="../0-overview/rust-companion.html">Rust Companion</a></li><li class="chapter-item expanded affix "><li class="part-title">📚 ✔️ Fundamentals</li><li class="chapter-item expanded "><a href="../1-fundamentals/architecture.html"><strong aria-hidden="true">1.</strong> Substrate Architecture</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/index.html"><strong aria-hidden="true">2.</strong> Substrate Kitties</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1-fundamentals/dev-env.html"><strong aria-hidden="true">2.1.</strong> Developer Environment Setup</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/install.html"><strong aria-hidden="true">2.2.</strong> Install Substrate Templates</a></li><li class="chapter-item expanded "><a href="../1-fundamentals/interact.html"><strong aria-hidden="true">2.3.</strong> Start a Node and Interact</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">🏰 FRAME 101</li><li class="chapter-item expanded "><a href="../2-frame-101/index.html"><strong aria-hidden="true">3.</strong> FRAME Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/frame.html" class="active"><strong aria-hidden="true">3.1.</strong> Runtime Interface</a></li><li class="chapter-item expanded "><a href="../2-frame-101/pallets.html"><strong aria-hidden="true">3.2.</strong> Pallets</a></li><li class="chapter-item expanded "><a href="../2-frame-101/extrinsics.html"><strong aria-hidden="true">3.3.</strong> Extrinsics</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/index.html"><strong aria-hidden="true">3.4.</strong> 😺 Add a FRAME Pallet</a></li></ol></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/import-a-pallet.html"><strong aria-hidden="true">4.</strong> 😺 Import the Nicks Pallet</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/configure-a-pallet.html"><strong aria-hidden="true">4.1.</strong> 😺 Configure Nicks</a></li><li class="chapter-item expanded "><a href="../2-frame-101/add-a-pallet/use-a-pallet.html"><strong aria-hidden="true">4.2.</strong> 😺 Nicks Interaction</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">👷 Runtime Engineering 101</li><li class="chapter-item expanded "><a href="../3-runtime-101/index.html"><strong aria-hidden="true">5.</strong> Runtime Engineering Overview</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Rust for FRAME</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 😺 Build an NFT Pallet</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> NFT UI</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">🕸 Networking 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Network Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> 😺 Local Network</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 👷 Runtime Engineering 201</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Runtime Upgrades 1</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Storage Migrations</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 😺 Add Identity Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 😺 Migrate Nicks -&gt; Identity</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Pallet Coupling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Benchmarking</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 😺 Benchmark A Custom Pallet</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Beyond FRAME</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🤳 Node Clients 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Polakdot.js</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Subtx</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> </div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 🦸 DevOps 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Node Types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">17.1.</strong> Full &amp; Archival</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.2.</strong> Light</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Node Telemetry &amp; Metrics</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Visualization w/ Grafana</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Remote Node Ops</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">19.1.</strong> Peering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.2.</strong> Exposing Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Going to Production FAQ</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 💠 Parachain Engineering 101</li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Solo-chains vs. Parachains</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Collators</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">22.1.</strong> Light vs. Full Para-Nodes</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.</strong> Cumulus</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">23.1.</strong> 😺 Cumulus Workshop</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">24.</strong> XCM</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">📚 📜 Smart Contracts</li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.</strong> Frontier</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">25.1.</strong> Ethereum Virtual Machine (EVM)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">25.2.</strong> Ethereum API</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.</strong> Wasm Contrats</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">26.1.</strong> Contracts Pallet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">26.2.</strong> ink!</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">27.</strong> 😺 Kitties &amp; Contracts</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🔋 Miscellaneous Topics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.</strong> Solo-chains</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">28.1.</strong> Private, Permissioned Networks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">28.2.</strong> Hybird Enterprise Chains</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Off-Chain Workers</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">29.1.</strong> Specialist Nodes w/ OCW</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">30.</strong> Specialist Nodes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">31.</strong> Oracles</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">32.</strong> SS58 Addresses</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">33.</strong> Bridgeds</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">33.1.</strong> BEEFY</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">🔍️ Quick Search</li><li class="chapter-item expanded "><a href="../quick-search/glossary.html"><strong aria-hidden="true">34.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="../quick-search/FAQ.html"><strong aria-hidden="true">35.</strong> FAQ</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">🙏 Contribute</li><li class="chapter-item expanded "><a href="../contribute/help-translate.html"><strong aria-hidden="true">36.</strong> Help Translate</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">devhub-books</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="frame"><a class="header" href="#frame">FRAME</a></h1>
+<p>The <strong>Framework for Runtime Aggregation of Modularized Entities (FRAME)</strong> is a set of modules and support libraries that
+simplify runtime development. In Substrate, these modules are called Pallets, each hosting domain-specific logic to include
+in a chain's runtime.</p>
+<p>FRAME also provides some helper modules to interact with important <a href="https://substrate.dev/rustdocs/v3.0.0/sc_service/index.html">Substrate Primitives</a> that provide the
+interface to the core client.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>The following diagram shows the architectural overview of FRAME and its support libraries:</p>
+<p><img src="assets/frame-arch.png" alt="FRAME Architecture" /></p>
+<h3 id="pallets"><a class="header" href="#pallets">Pallets</a></h3>
+<p>When building with FRAME, the Substrate runtime is composed of several smaller components called
+pallets. A pallet contains a set of types, storage items, and functions that define a set of
+features and functionality for a runtime.</p>
+<p><img src="assets/frame-runtime.png" alt="FRAME Runtime" /></p>
+<h3 id="system-library"><a class="header" href="#system-library">System Library</a></h3>
+<p>The <a href="https://substrate.dev/rustdocs/v3.0.0/frame_system/index.html">System library</a> provides
+low-level types, storage, and functions for your blockchain. All other pallets depend on the System
+library as the basis of your Substrate runtime.</p>
+<p>The System library defines all the core types for the Substrate runtime, such as:</p>
+<ul>
+<li>Origin</li>
+<li>Block Number</li>
+<li>Account Id</li>
+<li>Hash</li>
+<li>Header</li>
+<li>Version</li>
+<li>etc...</li>
+</ul>
+<p>It also has a number of system-critical storage items, such as:</p>
+<ul>
+<li>Account Nonce</li>
+<li>Block Hash</li>
+<li>Block Number</li>
+<li>Events</li>
+<li>etc...</li>
+</ul>
+<p>Finally, it defines a number of low level functions which can access your blockchain storage, verify
+the origin of an extrinsic, and more.</p>
+<h3 id="executive-module"><a class="header" href="#executive-module">Executive Module</a></h3>
+<p>The <a href="https://substrate.dev/rustdocs/v3.0.0/frame_executive/index.html">FRAME Executive module</a> acts as the
+orchestration layer for the runtime. It dispatches incoming extrinsic calls to the respective
+pallets in the runtime.</p>
+<h3 id="support-library"><a class="header" href="#support-library">Support Library</a></h3>
+<p>The <a href="https://substrate.dev/rustdocs/v3.0.0/frame_support/index.html">FRAME Support library</a> is a
+collection of Rust macros, types, traits, and functions that simplify the development of Substrate
+pallets.</p>
+<p>The support macros expand at compile time to generate code that is used by the runtime and reduce
+boilerplate code for the most common components of a pallet.</p>
+<h3 id="runtime"><a class="header" href="#runtime">Runtime</a></h3>
+<p>The runtime library brings together all these components and pallets. It defines which pallets are
+included with your runtime and configures them to work together to compose your final runtime. When
+calls are made to your runtime, it uses the Executive pallet to dispatch those calls to the
+individual pallets.</p>
+<h3 id="benchmarking"><a class="header" href="#benchmarking">Benchmarking</a></h3>
+<p>Macro for benchmarking a FRAME runtime.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/frame_benchmarking/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/benchmarking/src/lib.rs">Source</a></li>
+</ul>
+<h2 id="prebuilt-pallets"><a class="header" href="#prebuilt-pallets">Prebuilt Pallets</a></h2>
+<p>Some pallets will be sufficiently general-purpose to be reused in many blockchains. Anyone is free
+to write and share useful pallets. There is a collection of popular pallets provided with Substrate.
+Let's explore them.</p>
+<h3 id="assets"><a class="header" href="#assets">Assets</a></h3>
+<p>The Assets pallet is a simple, secure module for dealing with fungible assets.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_assets/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/assets/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="atomic-swap"><a class="header" href="#atomic-swap">Atomic Swap</a></h3>
+<p>A module for atomically sending funds from an origin to a target. A proof is used to allow the
+target to approve (claim) the swap. If the swap is not claimed within a specified duration of time,
+the sender may cancel it.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_atomic_swap/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/atomic-swap/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="aura"><a class="header" href="#aura">Aura</a></h3>
+<p>The Aura pallet extends Aura consensus by managing offline reporting.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_aura/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/aura/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="authority-discovery"><a class="header" href="#authority-discovery">Authority Discovery</a></h3>
+<p>The Authority Discovery pallet is used by <code>core/authority-discovery</code> to retrieve the current set of
+authorities, learn its own authority ID, as well as to sign and verify messages to and from other
+authorities.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_authority_discovery/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/authority-discovery/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="authorship"><a class="header" href="#authorship">Authorship</a></h3>
+<p>The Authorship pallet tracks the current author of the block and recent uncles.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_authorship/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/authorship/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="babe"><a class="header" href="#babe">BABE</a></h3>
+<p>The BABE pallet extends BABE consensus by collecting on-chain randomness from VRF outputs and
+managing epoch transitions.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_babe/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/babe/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="balances"><a class="header" href="#balances">Balances</a></h3>
+<p>The Balances pallet provides functionality for handling accounts and balances.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_balances/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/balances/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="benchmark"><a class="header" href="#benchmark">Benchmark</a></h3>
+<p>A pallet that contains common runtime patterns in an isolated manner. This pallet is not meant to be
+used in a production blockchain, just for benchmarking and testing purposes.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/frame_benchmarking/trait.Benchmark.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/benchmarking/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="collective"><a class="header" href="#collective">Collective</a></h3>
+<p>The Collective pallet allows a set of account IDs to make their collective feelings known through
+dispatched calls from specialized origins.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_collective/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/collective/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="contracts"><a class="header" href="#contracts">Contracts</a></h3>
+<p>The Contracts pallet provides functionality for the runtime to deploy and execute WebAssembly
+smart-contracts.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_contracts/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/contracts/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="democracy"><a class="header" href="#democracy">Democracy</a></h3>
+<p>The Democracy pallet provides a democratic system that handles administration of general stakeholder
+voting.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_democracy/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/democracy/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="elections-phragmén"><a class="header" href="#elections-phragmén">Elections Phragmén</a></h3>
+<p>The Phragmén Elections pallet is an election module based on
+<a href="https://wiki.polkadot.network/docs/en/learn-phragmen">sequential Phragmén</a>.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_elections_phragmen/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/elections-phragmen/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="elections"><a class="header" href="#elections">Elections</a></h3>
+<p>The Elections pallet is an election module for stake-weighted membership selection of a collective.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_elections/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/elections/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="example-offchain-worker"><a class="header" href="#example-offchain-worker">Example Offchain Worker</a></h3>
+<p>The Offchain Worker Example: A simple pallet demonstrating concepts, APIs and structures common to
+most offchain workers.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_example_offchain_worker/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/example-offchain-worker/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>The Example pallet is a simple example of a pallet demonstrating concepts, APIs, and structures
+common to most pallets.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_example/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/example/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="grandpa"><a class="header" href="#grandpa">GRANDPA</a></h3>
+<p>The GRANDPA pallet extends GRANDPA consensus by managing the GRANDPA authority set ready for the
+native code.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_grandpa/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/grandpa/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="identity"><a class="header" href="#identity">Identity</a></h3>
+<p>A federated naming system, allowing for multiple registrars to be added from a specified origin.
+Registrars can set a fee to provide identity-verification service. Anyone can put forth a proposed
+identity for a fixed deposit and ask for review by any number of registrars (paying each of their
+fees). Registrar judgements are given as an enum, allowing for sophisticated, multi-tier opinions.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_identity/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/identity/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="im-online"><a class="header" href="#im-online">I'm Online</a></h3>
+<p>The I'm Online pallet allows validators to gossip a heartbeat transaction with each new session to
+signal that the node is online.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_im_online/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/im-online/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="indices"><a class="header" href="#indices">Indices</a></h3>
+<p>The Indices pallet allocates indices for newly created accounts. An index is a short form of an
+address.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_indices/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/indices/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="membership"><a class="header" href="#membership">Membership</a></h3>
+<p>The Membership pallet allows control of membership of a set of <code>AccountId</code>s, useful for managing
+membership of a collective.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_membership/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/membership/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="multisig"><a class="header" href="#multisig">Multisig</a></h3>
+<p>A module for doing multi-signature dispatches.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_multisig/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/multisig/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="nicks"><a class="header" href="#nicks">Nicks</a></h3>
+<p>Nicks is a trivial module for keeping track of account names on-chain. It makes no effort to create
+a name hierarchy, be a DNS replacement or provide reverse lookups.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_nicks/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/nicks/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="offences"><a class="header" href="#offences">Offences</a></h3>
+<p>The Offences pallet tracks reported offences.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_offences/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/offences/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="proxy"><a class="header" href="#proxy">Proxy</a></h3>
+<p>A module allowing accounts to give permission to other accounts to dispatch types of calls from
+their signed origin.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_proxy/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/proxy/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="randomness-collective-flip"><a class="header" href="#randomness-collective-flip">Randomness Collective Flip</a></h3>
+<p>The Randomness Collective Flip pallet provides a <code>random</code> function that can be used in tests and
+generates low-influence random values based on the block hashes from the previous <code>81</code> blocks. This
+pallet is not intended for use in production.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_randomness_collective_flip/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/randomness-collective-flip/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="recovery"><a class="header" href="#recovery">Recovery</a></h3>
+<p>The Recovery pallet is an M-of-N social recovery tool for users to gain access to their accounts if
+the private key or other authentication mechanism is lost. Through this pallet, a user is able to
+make calls on-behalf-of another account which they have recovered. The recovery process is protected
+by trusted &quot;friends&quot; whom the original account owner chooses. A threshold (M) out of N friends are
+needed to give another account access to the recoverable account.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_recovery/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/recovery/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="scheduler"><a class="header" href="#scheduler">Scheduler</a></h3>
+<p>This module exposes capabilities for scheduling dispatches to occur at a specified block number or
+at a specified period. These scheduled dispatches may be named or anonymous and may be canceled.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_scheduler/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/scheduler/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="scored-pool"><a class="header" href="#scored-pool">Scored Pool</a></h3>
+<p>The Scored Pool pallet maintains a scored membership pool where the highest scoring entities are
+made members.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_scored_pool/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/scored-pool/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="session"><a class="header" href="#session">Session</a></h3>
+<p>The Session pallet allows validators to manage their session keys, provides a function for changing
+the session length, and handles session rotation.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_session/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/session/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="society"><a class="header" href="#society">Society</a></h3>
+<p>The Society module is an economic game which incentivizes users to participate and maintain a
+membership society.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_society/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/society/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="staking"><a class="header" href="#staking">Staking</a></h3>
+<p>The Staking pallet is used to manage funds at stake by network maintainers.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_staking/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/staking/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="sudo"><a class="header" href="#sudo">Sudo</a></h3>
+<p>The Sudo pallet allows for a single account (called the &quot;sudo key&quot;) to execute dispatchable
+functions that require a <code>Root</code> origin or designate a new account to replace them as the sudo key.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_sudo/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/sudo/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="timestamp"><a class="header" href="#timestamp">Timestamp</a></h3>
+<p>The Timestamp pallet provides functionality to get and set the on-chain time.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_timestamp/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/timestamp/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="transaction-payment"><a class="header" href="#transaction-payment">Transaction Payment</a></h3>
+<p>The Transaction Payment pallet provides the basic logic to compute pre-dispatch transaction fees.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_transaction_payment/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/transaction-payment/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="treasury"><a class="header" href="#treasury">Treasury</a></h3>
+<p>The Treasury pallet provides a &quot;pot&quot; of funds that can be managed by stakeholders in the system and
+a structure for making spending proposals from this pot.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_treasury/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/treasury/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="utility"><a class="header" href="#utility">Utility</a></h3>
+<p>A stateless module with helpers for dispatch management.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_utility/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/utility/src/lib.rs">Source</a></li>
+</ul>
+<h3 id="vesting"><a class="header" href="#vesting">Vesting</a></h3>
+<p>A simple module providing a means of placing a linear curve on an account's locked balance. This
+module ensures that there is a lock in place preventing the balance to drop below the unvested
+amount for any reason other than transaction fee payment.</p>
+<ul>
+<li><a href="https://substrate.dev/rustdocs/v3.0.0/pallet_vesting/index.html">Docs</a></li>
+<li><a href="https://github.com/paritytech/substrate/blob/v3.0.0/frame/vesting/src/lib.rs">Source</a></li>
+</ul>
+<h2 id="next-steps"><a class="header" href="#next-steps">Next Steps</a></h2>
+<h3 id="learn-more"><a class="header" href="#learn-more">Learn More</a></h3>
+<ul>
+<li>Learn how to <a href="pallets">develop custom Substrate pallets</a>.</li>
+</ul>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<ul>
+<li>Follow a
+<a href="../../tutorials/add-a-pallet/">tutorial to add a pallet to your FRAME runtime</a>.</li>
+</ul>
+<h3 id="references"><a class="header" href="#references">References</a></h3>
+<ul>
+<li>
+<p>Visit the reference docs for the
+<a href="https://substrate.dev/rustdocs/v3.0.0/frame_system/index.html">System library</a>.</p>
+</li>
+<li>
+<p>Visit the reference docs for the
+<a href="https://substrate.dev/rustdocs/v3.0.0/frame_executive/index.html">Executive pallet</a>.</p>
+</li>
+<li>
+<p>Visit the reference docs for the
+<a href="https://substrate.dev/rustdocs/v3.0.0/frame_support/index.html">FRAME support library</a>.</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2-frame-101/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2-frame-101/pallets.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2-frame-101/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2-frame-101/pallets.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
